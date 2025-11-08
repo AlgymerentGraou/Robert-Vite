@@ -5,8 +5,8 @@
 [ext_resource type="PackedScene" uid="uid://q1ms5ivasoj0" path="res://scenes/enemy.tscn" id="2_4wyf3"]
 [ext_resource type="Script" uid="uid://bwr3vsp7kgqgj" path="res://scripts/camera_2d.gd" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://ovpmsigldn2t" path="res://scenes/spawner.tscn" id="3_4wyf3"]
+[ext_resource type="Texture2D" uid="uid://bp8jimkigdbt8" path="res://assets/Roads.png" id="6_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://cwnqw087s7rsr" path="res://scenes/cadran.tscn" id="7_i7141"]
-[ext_resource type="Texture2D" uid="uid://bsdh0i33sygqd" path="res://assets/grid.png" id="8_4mrxx"]
 [ext_resource type="Shader" uid="uid://ba4lfsq1soo0m" path="res://shaders/CRT.gdshader" id="8_7r4gi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w7kh3"]
@@ -14,6 +14,27 @@ shader = ExtResource("8_7r4gi")
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_71j4m")
+
+[node name="Cadran" parent="." instance=ExtResource("7_i7141")]
+
+[node name="ColorRect" type="ColorRect" parent="Cadran"]
+material = SubResource("ShaderMaterial_w7kh3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+metadata/_edit_use_anchors_ = true
+
+[node name="Parallax2D" type="Parallax2D" parent="."]
+z_index = -1
+repeat_size = Vector2(14448, 7720)
+repeat_times = 2
+
+[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_4mrxx")
 
 [node name="Car" parent="." instance=ExtResource("1_rwgxs")]
 position = Vector2(576, 324)
@@ -30,23 +51,3 @@ spawn_interval = 0.5
 [node name="TimerLevel" type="Timer" parent="."]
 wait_time = 10.0
 one_shot = true
-
-[node name="Parallax2D" type="Parallax2D" parent="."]
-visible = false
-repeat_size = Vector2(1024, 1024)
-repeat_times = 4
-
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
-visible = false
-scale = Vector2(4, 4)
-texture = ExtResource("8_4mrxx")
-
-[node name="Cadran" parent="." instance=ExtResource("7_i7141")]
-
-[node name="ColorRect" type="ColorRect" parent="Cadran"]
-material = SubResource("ShaderMaterial_w7kh3")
-anchors_preset = 15
-anchor_right = 1.0
-anchor_bottom = 1.0
-grow_horizontal = 2
-grow_vertical = 2
