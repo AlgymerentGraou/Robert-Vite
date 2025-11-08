@@ -1,3 +1,4 @@
+res://scenes/intro_cinématique.tscn
 res://scripts/enemy.gd
-res://scripts/camera_2d.gd
-res://scenes/enemy.tscn
+res://scenes/cadran.tscn
+res://scenes/car.tscn
