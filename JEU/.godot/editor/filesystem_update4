@@ -10,3 +10,4 @@ res://scenes/cadran.gd
 res://scenes/aiguille.gd
 res://scripts/spawner.gd
 res://scenes/sprite_2d.gd
+res://shaders/CRT.gdshader
