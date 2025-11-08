@@ -8,6 +8,5 @@ func update_from_ratio(ratio: float) -> void:
 	var end_angle = deg_to_rad(end_angle_deg)
 
 	var new_rot = lerp(end_angle, start_angle, ratio)
-	print("[FlècheCadran] Rotation calculée pour ratio=%.2f → %.2f°" % [ratio, rad_to_deg(new_rot)])
 
 	rotation = new_rot

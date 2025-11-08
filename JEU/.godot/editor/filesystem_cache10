@@ -1,63 +1,30 @@
 63f7b34db8d8cdea90c76aacccf841ec
-<<<<<<< Updated upstream
-::res://::1762639170
-::res://assets/::1762639170
-Car spritesheet.png::CompressedTexture2D::5973032680452550369::1762639170::1762639192::1::::<><><>0<>0<>1300b094884a6c3665723d7f244db208<>res://.godot/imported/Car spritesheet.png-4e4e63011240f28c0a32886e45bf70d7.ctex::
-fléche_cadran_2.png::CompressedTexture2D::8483958666956223515::1762635978::1762636065::1::::<><><>0<>0<>b247715f040b0c3df8dec624401122ef<>res://.godot/imported/fléche_cadran_2.png-58a7d9212f9d705ba9ce9c2714546071.ctex::
-grid.png::CompressedTexture2D::3656483130975372443::1762635978::1762636065::1::::<><><>0<>0<>bdada53e73d4ecacbf59af2ace3b1972<>res://.godot/imported/grid.png-0e5acf495abafdc7f64f9b213a44aa0e.ctex::
-icon.svg::CompressedTexture2D::7700753234953370227::1762635978::1762636065::1::::<><><>0<>0<>0e3c272de481110f97d284602fe6b280<>res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex::
-Jauge.png::CompressedTexture2D::5053178828793276334::1762635978::1762636065::1::::<><><>0<>0<>0bd810acd46e40bb95a70b2b2ada5556<>res://.godot/imported/Jauge.png-d49c667389efa9fce1b34310f39cea0d.ctex::
-La_Robert_Particule.png::CompressedTexture2D::5653773854328730653::1762635978::1762636065::1::::<><><>0<>0<>fe69656f4e502c5805f3e038b9a6febc<>res://.godot/imported/La_Robert_Particule.png-e7a04185dfb707b0c44f62b42808d352.ctex::
-robert vite playable.OGV::VideoStreamTheora::4254064285794400002::1762636354::0::1::::<><><>0<>0<><>::
-RobertRun.png::CompressedTexture2D::7094999514715827857::1762635978::1762636065::1::::<><><>0<>0<>ead7552f8c6af9233c2b2b6d913673bb<>res://.godot/imported/RobertRun.png-43afb1526c029d8adc6eeeb6fe2d86ca.ctex::
-Robert_Pattinson_at_Berlinale_2025 (1).jpg::CompressedTexture2D::7076785796428100984::1762635978::1762636067::1::::<><><>0<>0<>b1b53d52bc2ef4d32d802ee7494ec825<>res://.godot/imported/Robert_Pattinson_at_Berlinale_2025 (1).jpg-700088ae6aabc04db9ce41df29c5a1b6.ctex::
-::res://scenes/::1762639170
-aiguille.gd::GDScript::1202105507725601968::1762635978::0::1::::<>Sprite2D<><>0<>0<><>::
-cadran.gd::GDScript::7623584812665119022::1762635978::0::1::::<>CanvasLayer<><>0<>0<><>::
-cadran.tscn::PackedScene::6344844963117427737::1762639170::0::1::::<><><>0<>0<><>::uid://dgu6lfhqh0w4e::::res://scenes/cadran.gd<>uid://cd82d8j2qq4p3::::res://assets/Jauge.png<>uid://bc1duye1urqug::::res://scenes/sprite_2d.gd<>uid://ds4xtbbl4ce5p::::res://assets/fléche_cadran_2.png<>uid://rekrcn32863e::::res://scenes/aiguille.gd
-car.tscn::PackedScene::7192089257674856141::1762639170::0::1::::<><><>0<>0<><>::uid://ctykoatm5ysya::::res://scripts/car.gd<>uid://cv0owbmhl7gvh::::res://assets/Car_spritesheet.png
-enemy.tscn::PackedScene::1177457657031365555::1762635978::0::1::::<><><>0<>0<><>::uid://p2iq2bi58aay::::res://scripts/enemy.gd<>uid://c8c4ut4h20rbt::::res://assets/RobertRun.png<>uid://cmsy3gy60ap4x::::res://assets/La_Robert_Particule.png
-flèche_cadran.gd::GDScript::4069538114696383346::1762635978::0::1::::<>Sprite2D<><>0<>0<><>::
-fléche_cadran.png::CompressedTexture2D::1776570218250843104::1762635978::1762636065::1::::<><><>0<>0<>3378e5ecae483b2ef7d63900dae7b828<>res://.godot/imported/fléche_cadran.png-4c199d746b7f394e3984bf35b440c0dc.ctex::
-spawner.tscn::PackedScene::1026928886252248421::1762635978::0::1::::<><><>0<>0<><>::uid://dum0ln0locbwu::::res://scripts/spawner.gd
-sprite_2d.gd::GDScript::2580691327379473526::1762635978::0::1::::<>Sprite2D<><>0<>0<><>::
-world.gd::GDScript::4609195718557480267::1762635978::0::1::::<>Node2D<><>0<>0<><>::
-world.tscn::PackedScene::3483035429230965771::1762635978::0::1::::<><><>0<>0<><>::uid://b6wy1r08i03jb::::res://scenes/world.gd<>uid://dap5woe8wwbxl::::res://scenes/car.tscn<>uid://q1ms5ivasoj0::::res://scenes/enemy.tscn<>uid://bwr3vsp7kgqgj::::res://scripts/camera_2d.gd<>uid://ovpmsigldn2t::::res://scenes/spawner.tscn<>uid://cwnqw087s7rsr::::res://scenes/cadran.tscn<>uid://bsdh0i33sygqd::::res://assets/grid.png
-::res://scripts/::1762639170
-camera_2d.gd::GDScript::3967408213078213797::1762635978::0::1::::<>Camera2D<><>0<>0<><>::
-car.gd::GDScript::6156606663586149208::1762635978::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
-enemy.gd::GDScript::1109086582654838592::1762639170::0::1::::<>CharacterBody2D<><>0<>0<><>::
-spawner.gd::GDScript::8589349747383024788::1762635978::0::1::::<>Node2D<><>0<>0<><>::
-::res://shaders/::1762639170
-CRT.gdshader::Shader::2446965425793905766::1762639170::0::1::::<><><>0<>0<><>::
-=======
 ::res://::1762636880
-::res://assets/::1762639969
+::res://assets/::1762636937
 Car spritesheet.png::CompressedTexture2D::5973032680452550369::1762636937::1762636970::1::::<><><>0<>0<>1300b094884a6c3665723d7f244db208<>res://.godot/imported/Car spritesheet.png-4e4e63011240f28c0a32886e45bf70d7.ctex::
 fléche_cadran_2.png::CompressedTexture2D::8483958666956223515::1762624207::1762624208::1::::<><><>0<>0<>b247715f040b0c3df8dec624401122ef<>res://.godot/imported/fléche_cadran_2.png-58a7d9212f9d705ba9ce9c2714546071.ctex::
+grid.png::CompressedTexture2D::3656483130975372443::1762612599::1762612670::1::::<><><>0<>0<>bdada53e73d4ecacbf59af2ace3b1972<>res://.godot/imported/grid.png-0e5acf495abafdc7f64f9b213a44aa0e.ctex::
 icon.svg::CompressedTexture2D::7700753234953370227::1762612599::1762612670::1::::<><><>0<>0<>0e3c272de481110f97d284602fe6b280<>res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex::
 Jauge.png::CompressedTexture2D::5053178828793276334::1762616324::1762616324::1::::<><><>0<>0<>0bd810acd46e40bb95a70b2b2ada5556<>res://.godot/imported/Jauge.png-d49c667389efa9fce1b34310f39cea0d.ctex::
 La_Robert_Particule.png::CompressedTexture2D::5653773854328730653::1762633462::1762633462::1::::<><><>0<>0<>fe69656f4e502c5805f3e038b9a6febc<>res://.godot/imported/La_Robert_Particule.png-e7a04185dfb707b0c44f62b42808d352.ctex::
-Roads.png::CompressedTexture2D::3507939189533563811::1762639969::1762640068::1::::<><><>0<>0<>d96a71800ee5cd0e211c8bdf15380d84<>res://.godot/imported/Roads.png-497428d948f5dbee5a0dec13ce1c22e0.ctex::
 RobertRun.png::CompressedTexture2D::7094999514715827857::1762612599::1762612670::1::::<><><>0<>0<>ead7552f8c6af9233c2b2b6d913673bb<>res://.godot/imported/RobertRun.png-43afb1526c029d8adc6eeeb6fe2d86ca.ctex::
 Robert_Pattinson_at_Berlinale_2025 (1).jpg::CompressedTexture2D::7076785796428100984::1762612599::1762612671::1::::<><><>0<>0<>b1b53d52bc2ef4d32d802ee7494ec825<>res://.godot/imported/Robert_Pattinson_at_Berlinale_2025 (1).jpg-700088ae6aabc04db9ce41df29c5a1b6.ctex::
-::res://scenes/::1762639969
-aiguille.gd::GDScript::1202105507725601968::1762639963::0::1::::<>Sprite2D<><>0<>0<><>::
-cadran.gd::GDScript::7623584812665119022::1762639963::0::1::::<>CanvasLayer<><>0<>0<><>::
+::res://scenes/::1762636937
+aiguille.gd::GDScript::1202105507725601968::1762630474::0::1::::<>Sprite2D<><>0<>0<><>::
+cadran.gd::GDScript::7623584812665119022::1762632720::0::1::::<>CanvasLayer<><>0<>0<><>::
 cadran.tscn::PackedScene::6344844963117427737::1762636937::0::1::::<><><>0<>0<><>::uid://dgu6lfhqh0w4e::::res://scenes/cadran.gd<>uid://cd82d8j2qq4p3::::res://assets/Jauge.png<>uid://bc1duye1urqug::::res://scenes/sprite_2d.gd<>uid://ds4xtbbl4ce5p::::res://assets/fléche_cadran_2.png<>uid://rekrcn32863e::::res://scenes/aiguille.gd
-car.tscn::PackedScene::7192089257674856141::1762639969::0::1::::<><><>0<>0<><>::uid://ctykoatm5ysya::::res://scripts/car.gd<>uid://crdm8f1bn2vnl::::res://assets/Car spritesheet.png
+car.tscn::PackedScene::7192089257674856141::1762636937::0::1::::<><><>0<>0<><>::uid://ctykoatm5ysya::::res://scripts/car.gd<>uid://cv0owbmhl7gvh::::res://assets/Car_spritesheet.png
 enemy.tscn::PackedScene::1177457657031365555::1762635822::0::1::::<><><>0<>0<><>::uid://p2iq2bi58aay::::res://scripts/enemy.gd<>uid://c8c4ut4h20rbt::::res://assets/RobertRun.png<>uid://cmsy3gy60ap4x::::res://assets/La_Robert_Particule.png
 flèche_cadran.gd::GDScript::4069538114696383346::1762630474::0::1::::<>Sprite2D<><>0<>0<><>::
 fléche_cadran.png::CompressedTexture2D::1776570218250843104::1762623432::1762623427::1::::<><><>0<>0<>3378e5ecae483b2ef7d63900dae7b828<>res://.godot/imported/fléche_cadran.png-4c199d746b7f394e3984bf35b440c0dc.ctex::
 spawner.tscn::PackedScene::1026928886252248421::1762612599::0::1::::<><><>0<>0<><>::uid://dum0ln0locbwu::::res://scripts/spawner.gd
-sprite_2d.gd::GDScript::2580691327379473526::1762639963::0::1::::<>Sprite2D<><>0<>0<><>::
-world.gd::GDScript::4609195718557480267::1762639963::0::1::::<>Node2D<><>0<>0<><>::
-world.tscn::PackedScene::3483035429230965771::1762639969::0::1::::<><><>0<>0<><>::uid://b6wy1r08i03jb::::res://scenes/world.gd<>uid://dap5woe8wwbxl::::res://scenes/car.tscn<>uid://q1ms5ivasoj0::::res://scenes/enemy.tscn<>uid://bwr3vsp7kgqgj::::res://scripts/camera_2d.gd<>uid://ovpmsigldn2t::::res://scenes/spawner.tscn<>uid://cwnqw087s7rsr::::res://scenes/cadran.tscn<>uid://bsdh0i33sygqd::::res://assets/grid.png<>uid://ba4lfsq1soo0m::::res://shaders/CRT.gdshader
-::res://scripts/::1762639963
+sprite_2d.gd::GDScript::2580691327379473526::1762616767::0::1::::<>Sprite2D<><>0<>0<><>::
+world.gd::GDScript::4609195718557480267::1762631939::0::1::::<>Node2D<><>0<>0<><>::
+world.tscn::PackedScene::3483035429230965771::1762632887::0::1::::<><><>0<>0<><>::uid://b6wy1r08i03jb::::res://scenes/world.gd<>uid://dap5woe8wwbxl::::res://scenes/car.tscn<>uid://q1ms5ivasoj0::::res://scenes/enemy.tscn<>uid://bwr3vsp7kgqgj::::res://scripts/camera_2d.gd<>uid://ovpmsigldn2t::::res://scenes/spawner.tscn<>uid://cwnqw087s7rsr::::res://scenes/cadran.tscn<>uid://bsdh0i33sygqd::::res://assets/grid.png
+::res://scripts/::1762636937
 camera_2d.gd::GDScript::3967408213078213797::1762636870::0::1::::<>Camera2D<><>0<>0<><>::
-car.gd::GDScript::6156606663586149208::1762639963::0::1::::Car<>CharacterBody2D<><>0<>0<><>::
-enemy.gd::GDScript::1109086582654838592::1762639963::0::1::::<>CharacterBody2D<><>0<>0<><>::
-spawner.gd::GDScript::8589349747383024788::1762639963::0::1::::<>Node2D<><>0<>0<><>::
-::res://shaders/::1762639487
-CRT.gdshader::Shader::2446965425793905766::1762639487::0::1::::<><><>0<>0<><>::
->>>>>>> Stashed changes
+car.gd::GDScript::6156606663586149208::1762618871::0::1::::Player<>CharacterBody2D<><>0<>0<><>::
+enemy.gd::GDScript::1109086582654838592::1762636937::0::1::::<>CharacterBody2D<><>0<>0<><>::
+spawner.gd::GDScript::8589349747383024788::1762613624::0::1::::<>Node2D<><>0<>0<><>::
+::res://shaders/::1762636937
+CRT.gdshader::Shader::2446965425793905766::1762636937::0::1::::<><><>0<>0<><>::

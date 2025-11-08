@@ -4,7 +4,7 @@
 [ext_resource type="Texture2D" uid="uid://crdm8f1bn2vnl" path="res://assets/Car spritesheet.png" id="2_qt2eu"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8qdw"]
-size = Vector2(135, 82)
+size = Vector2(136, 96)
 
 [node name="Car" type="CharacterBody2D" node_paths=PackedStringArray("car_sprite") groups=["Player"]]
 collision_mask = 12
@@ -12,12 +12,12 @@ script = ExtResource("1_tphm3")
 car_sprite = NodePath("Sprite2D")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(-0.5, 2)
+position = Vector2(1, 6)
 shape = SubResource("RectangleShape2D_l8qdw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["Player"]]
 texture_filter = 1
 position = Vector2(1, 2.0000005)
-scale = Vector2(3.7159088, 3.40625)
+scale = Vector2(4, 4)
 texture = ExtResource("2_qt2eu")
 hframes = 8

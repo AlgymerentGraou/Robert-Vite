@@ -18,4 +18,3 @@ func update_progress(current: int, target: int) -> void:
 	# Limiter entre 0 et 7
 	frame = clamp(frame_index, 0, 7)
 	
-	print("Progression: %d/%d = %.2f%% -> Frame %d" % [current, target, progress_ratio * 100, frame])

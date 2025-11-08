@@ -57,4 +57,3 @@ func spawn_enemy() -> void:
 	enemy.global_position = spawn_pos
 	get_parent().add_child(enemy)
 	
-	print("Ennemi spawné à: ", spawn_pos)
