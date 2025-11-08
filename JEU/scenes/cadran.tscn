@@ -14,7 +14,7 @@ fleche = NodePath("FlecheCadran")
 
 [node name="Label" type="Label" parent="."]
 offset_right = 40.0
-offset_bottom = 23.0
+offset_bottom = 34.0
 theme_override_font_sizes/font_size = 24
 
 [node name="Cadran" type="Sprite2D" parent="."]
