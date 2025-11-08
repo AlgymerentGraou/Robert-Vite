@@ -1,0 +1,5 @@
+res://game/enemy/enemy.tscn
+res://game/enemy/enemy.gd
+res://game/world/world.tscn
+res://game/obstacles/wall.tscn
+res://game/player/player.gd

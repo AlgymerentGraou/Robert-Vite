@@ -1,0 +1,107 @@
+[gd_scene load_steps=14 format=3 uid="uid://q1ms5ivasoj0"]
+
+[ext_resource type="Script" uid="uid://p2iq2bi58aay" path="res://scripts/enemy.gd" id="1_md0e3"]
+[ext_resource type="Texture2D" uid="uid://c8c4ut4h20rbt" path="res://assets/RobertRun.png" id="2_md0e3"]
+[ext_resource type="Texture2D" uid="uid://cmsy3gy60ap4x" path="res://assets/La_Robert_Particule.png" id="3_4ra3w"]
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_4ra3w"]
+atlas = ExtResource("2_md0e3")
+region = Rect2(0, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_5uy6h"]
+atlas = ExtResource("2_md0e3")
+region = Rect2(32, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_c4w8v"]
+atlas = ExtResource("2_md0e3")
+region = Rect2(64, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_xwavj"]
+atlas = ExtResource("2_md0e3")
+region = Rect2(96, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_nenq2"]
+atlas = ExtResource("2_md0e3")
+region = Rect2(128, 0, 32, 16)
+
+[sub_resource type="AtlasTexture" id="AtlasTexture_md484"]
+atlas = ExtResource("2_md0e3")
+region = Rect2(160, 0, 32, 16)
+
+[sub_resource type="SpriteFrames" id="SpriteFrames_ipns3"]
+animations = [{
+"frames": [{
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_4ra3w")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_5uy6h")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_c4w8v")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_xwavj")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_nenq2")
+}, {
+"duration": 1.0,
+"texture": SubResource("AtlasTexture_md484")
+}],
+"loop": true,
+"name": &"default",
+"speed": 10.0
+}]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_8qclf"]
+radius = 7.0
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
+radius = 4.2573466
+
+[sub_resource type="Gradient" id="Gradient_5uy6h"]
+offsets = PackedFloat32Array(0.6707317, 1)
+colors = PackedColorArray(0.74558026, 0.7455802, 0.74558014, 1, 0, 0, 0, 0)
+
+[node name="Enemy" type="CharacterBody2D"]
+scale = Vector2(4, 4)
+collision_layer = 2
+collision_mask = 4
+script = ExtResource("1_md0e3")
+
+[node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
+texture_filter = 1
+sprite_frames = SubResource("SpriteFrames_ipns3")
+autoplay = "default"
+frame_progress = 0.8755775
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(0, 1)
+shape = SubResource("CircleShape2D_8qclf")
+
+[node name="DeathZone" type="Area2D" parent="."]
+collision_layer = 8
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
+position = Vector2(0.25, 1)
+shape = SubResource("CircleShape2D_md0e3")
+debug_color = Color(0.61960787, 0.45490196, 0.7490196, 0.22745098)
+
+[node name="CPUParticles2D" type="CPUParticles2D" parent="."]
+texture_filter = 1
+emitting = false
+amount = 1
+texture = ExtResource("3_4ra3w")
+lifetime = 1.1
+one_shot = true
+direction = Vector2(0, -1)
+initial_velocity_min = 100.0
+initial_velocity_max = 200.0
+angular_velocity_min = -180.0
+angular_velocity_max = 180.0
+scale_amount_min = 4.0
+scale_amount_max = 4.0
+color_ramp = SubResource("Gradient_5uy6h")
+
+[connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
