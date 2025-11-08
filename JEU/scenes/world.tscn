@@ -1,4 +1,4 @@
-[gd_scene load_steps=8 format=3 uid="uid://bpvhc430uq0u6"]
+[gd_scene load_steps=10 format=3 uid="uid://bpvhc430uq0u6"]
 
 [ext_resource type="Script" uid="uid://b6wy1r08i03jb" path="res://scenes/world.gd" id="1_71j4m"]
 [ext_resource type="PackedScene" uid="uid://dap5woe8wwbxl" path="res://scenes/car.tscn" id="1_rwgxs"]
@@ -7,6 +7,10 @@
 [ext_resource type="PackedScene" uid="uid://ovpmsigldn2t" path="res://scenes/spawner.tscn" id="3_4wyf3"]
 [ext_resource type="PackedScene" uid="uid://cwnqw087s7rsr" path="res://scenes/cadran.tscn" id="7_i7141"]
 [ext_resource type="Texture2D" uid="uid://bsdh0i33sygqd" path="res://assets/grid.png" id="8_4mrxx"]
+[ext_resource type="Shader" uid="uid://ba4lfsq1soo0m" path="res://shaders/CRT.gdshader" id="8_7r4gi"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_w7kh3"]
+shader = ExtResource("8_7r4gi")
 
 [node name="World" type="Node2D"]
 script = ExtResource("1_71j4m")
@@ -18,10 +22,6 @@ position = Vector2(576, 324)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 script = ExtResource("2_k0juu")
-
-[node name="Area2D" type="Area2D" parent="Car"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Car/Area2D"]
 
 [node name="Spawner" parent="." instance=ExtResource("3_4wyf3")]
 enemy_scene = ExtResource("2_4wyf3")
@@ -42,3 +42,11 @@ scale = Vector2(4, 4)
 texture = ExtResource("8_4mrxx")
 
 [node name="Cadran" parent="." instance=ExtResource("7_i7141")]
+
+[node name="ColorRect" type="ColorRect" parent="Cadran"]
+material = SubResource("ShaderMaterial_w7kh3")
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
