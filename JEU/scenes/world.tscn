@@ -19,13 +19,9 @@ position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 script = ExtResource("2_k0juu")
 
-[node name="Area2D" type="Area2D" parent="Car"]
-
-[node name="CollisionShape2D" type="CollisionShape2D" parent="Car/Area2D"]
-
 [node name="Spawner" parent="." instance=ExtResource("3_4wyf3")]
 enemy_scene = ExtResource("2_4wyf3")
-spawn_interval = 0.5
+spawn_interval = 0.1
 
 [node name="TimerLevel" type="Timer" parent="."]
 wait_time = 10.0

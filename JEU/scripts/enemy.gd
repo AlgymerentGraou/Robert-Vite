@@ -27,8 +27,6 @@ func _on_death_zone_body_entered(body: Node2D) -> void:
 	if _is_dying:
 		return
 	
-	print("Enemy touched by: ", body.name)
-	
 	if body.is_in_group("Player"):
 		_is_dying = true
 		
