@@ -1,9 +1,13 @@
-[gd_scene load_steps=3 format=3 uid="uid://cqgbq3p32n34n"]
+[gd_scene load_steps=5 format=3 uid="uid://cqgbq3p32n34n"]
 
 [ext_resource type="Script" uid="uid://bnm4ohgfkxkfr" path="res://scenes/death_screenBNT.gd" id="1_uyutr"]
+[ext_resource type="Script" uid="uid://w07xk80rd0vp" path="res://scenes/score_final.gd" id="2_dwo6e"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_itto5"]
 font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_uyutr"]
+font_size = 32
 
 [node name="Death_screen" type="Control"]
 layout_mode = 3
@@ -51,6 +55,22 @@ text = "RESTART"
 layout_mode = 2
 theme_override_font_sizes/font_size = 32
 text = "RETURN TO MENU"
+
+[node name="score" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -64.0
+offset_top = -22.0
+offset_right = 65.0
+offset_bottom = 23.0
+grow_horizontal = 2
+grow_vertical = 2
+label_settings = SubResource("LabelSettings_uyutr")
+script = ExtResource("2_dwo6e")
 
 [connection signal="pressed" from="VBoxContainer/Restart" to="." method="_on_restart_pressed"]
 [connection signal="pressed" from="VBoxContainer/Return" to="." method="_on_return_pressed"]

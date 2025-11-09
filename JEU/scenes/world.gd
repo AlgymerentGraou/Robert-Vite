@@ -42,6 +42,7 @@ func add_kill(amount: int = 1) -> void:
 		return
 	
 	current_kills += amount
+	GlobalScore.robert_score += amount
 	print("📊 [WORLD] +%d kills (total: %d/%d)" % [amount, current_kills, target_kills])
 	update_display()
 	
@@ -88,6 +89,7 @@ func game_over() -> void:
 	
 	if cadran and cadran.has_method("show_game_over"):
 		cadran.show_game_over()
+	get_tree().change_scene_to_file("res://scenes/death_screen.tscn")
 
 # 🎁 FONCTION DE BONUS
 func give_random_bonus() -> void:
