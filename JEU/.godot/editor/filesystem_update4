@@ -12,3 +12,9 @@ res://scenes/aiguille.gd
 res://scenes/sprite_2d.gd
 res://shaders/CRT.gdshader
 res://shaders/Silhouette.gdshader
+res://scenes/death_screenBNT.gd
+res://stat_panel.gd
+res://scripts/stat_panel.tscn
+res://scripts/stat_panel.gd
+res://canvas_layer.gd
+res://scripts/canvas_layer.tscn
