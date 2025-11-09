@@ -6,7 +6,6 @@
 font_size = 64
 
 [sub_resource type="LabelSettings" id="LabelSettings_5hgee"]
-font_size = 32
 
 [node name="main menu" type="Control"]
 layout_mode = 3
@@ -68,8 +67,7 @@ text = "QUIT"
 [node name="credit" type="Window" parent="."]
 oversampling_override = 1.0
 initial_position = 1
-size = Vector2i(500, 500)
-visible = false
+size = Vector2i(550, 500)
 
 [node name="Label" type="Label" parent="credit"]
 anchors_preset = 8
@@ -84,16 +82,20 @@ offset_bottom = 89.5
 grow_horizontal = 2
 grow_vertical = 2
 size_flags_horizontal = 4
-text = "BAILLOT Natan
-BOULONGNE Aksel
-CHOQUET Clémentine
-DURANTHON Arthur
-TETREL Andeïl
-KLEIN Yanis
-DELATTRE Alissa
-DESCELIERS Maxence
-DELBOVE Jean-batiste"
+text = "CREDITS
+BAILLOT Natan - Gameplay programmer
+TETREL Andeï - Sprite and Technical artist
+DURANTHON Arthur - UI and environnement Artist
+CHOQUET Clémentine - Environnement Artist
+BOULONGNE Aksel - UI programmer and caméraman
+
+BIG THANKS TO :
+DELBOVE Jean-batiste for programming advices and being Francis
+DESCELIERS Maxence for programming help
+GASNER-FLEDRICH Soren for base sprites help and being Robert
+SALVENIAC Manon for the teacup "
 label_settings = SubResource("LabelSettings_5hgee")
+horizontal_alignment = 1
 
 [connection signal="pressed" from="VBoxContainer/startBNT" to="." method="_on_start_bnt_pressed"]
 [connection signal="pressed" from="VBoxContainer/cutsceneBNT" to="." method="_on_cutscene_bnt_pressed"]
