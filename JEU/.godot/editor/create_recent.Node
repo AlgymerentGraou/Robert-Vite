@@ -1,14 +1,14 @@
-Node2D
-ColorRect
-SubViewport
-CanvasModulate      - Matches the "color" keyword.
+Button
+Label
+Window
+Popup
+VBoxContainer
+VideoStreamPlayer
+AspectRatioContainer
 CPUParticles2D
 Sprite2D
 Timer
 CharacterBody2D
 Parallax2D
-Label
 CanvasLayer
-Camera2D
-CollisionShape2D
-Area2D
+Node2D
