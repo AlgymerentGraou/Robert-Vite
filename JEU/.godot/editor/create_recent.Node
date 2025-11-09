@@ -1,5 +1,7 @@
-Label
+HBoxContainer
 VBoxContainer
+TextureRect
+Label
 Button
 Window
 Popup
@@ -11,4 +13,3 @@ Timer
 CharacterBody2D
 Parallax2D
 CanvasLayer
-Node2D

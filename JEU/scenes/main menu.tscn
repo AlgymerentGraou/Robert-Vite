@@ -1,6 +1,7 @@
-[gd_scene load_steps=4 format=3 uid="uid://b6puack65w6ap"]
+[gd_scene load_steps=5 format=3 uid="uid://b6puack65w6ap"]
 
 [ext_resource type="Script" uid="uid://c6xb7d3lml3ig" path="res://scenes/main_menu_button.gd" id="1_5hgee"]
+[ext_resource type="Texture2D" uid="uid://bj4v1u5wypbl5" path="res://assets/Capture_decran_2025-11-09_135533.png" id="2_xsilq"]
 
 [sub_resource type="LabelSettings" id="LabelSettings_uqkwj"]
 font_size = 64
@@ -16,7 +17,58 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_5hgee")
 
+[node name="TextureRect" type="TextureRect" parent="."]
+layout_mode = 0
+offset_right = 1910.0
+offset_bottom = 1029.0
+scale = Vector2(0.60312474, 0.6296576)
+texture = ExtResource("2_xsilq")
+
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -145.5
+offset_top = -60.0
+offset_right = 145.5
+offset_bottom = 60.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 749
+
+[node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 219
+
+[node name="startBNT" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "START"
+
+[node name="cutsceneBNT" type="Button" parent="HBoxContainer/VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "CUTSCENE"
+
+[node name="VBoxContainer2" type="VBoxContainer" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_constants/separation = 219
+
+[node name="creditBNT" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "CREDIT"
+
+[node name="quitBNT" type="Button" parent="HBoxContainer/VBoxContainer2"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "QUIT"
+
 [node name="title" type="Label" parent="."]
+visible = false
 layout_mode = 1
 anchors_preset = 5
 anchor_left = 0.5
@@ -28,41 +80,6 @@ offset_bottom = 140.0
 grow_horizontal = 2
 text = "ROBERT VITE !!!!"
 label_settings = SubResource("LabelSettings_uqkwj")
-
-[node name="VBoxContainer" type="VBoxContainer" parent="."]
-layout_mode = 1
-anchors_preset = 8
-anchor_left = 0.5
-anchor_top = 0.5
-anchor_right = 0.5
-anchor_bottom = 0.5
-offset_left = -84.0
-offset_top = -96.0
-offset_right = 85.0
-offset_bottom = 158.0
-grow_horizontal = 2
-grow_vertical = 2
-theme_override_constants/separation = 14
-
-[node name="startBNT" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "START"
-
-[node name="cutsceneBNT" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "CUTSCENE"
-
-[node name="creditBNT" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "CREDIT"
-
-[node name="quitBNT" type="Button" parent="VBoxContainer"]
-layout_mode = 2
-theme_override_font_sizes/font_size = 32
-text = "QUIT"
 
 [node name="credit" type="Window" parent="."]
 oversampling_override = 1.0
@@ -98,8 +115,8 @@ SALVENIAC Manon for the teacup "
 label_settings = SubResource("LabelSettings_5hgee")
 horizontal_alignment = 1
 
-[connection signal="pressed" from="VBoxContainer/startBNT" to="." method="_on_start_bnt_pressed"]
-[connection signal="pressed" from="VBoxContainer/cutsceneBNT" to="." method="_on_cutscene_bnt_pressed"]
-[connection signal="pressed" from="VBoxContainer/creditBNT" to="." method="_on_credit_bnt_pressed"]
-[connection signal="pressed" from="VBoxContainer/quitBNT" to="." method="_on_quit_bnt_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/startBNT" to="." method="_on_start_bnt_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer/cutsceneBNT" to="." method="_on_cutscene_bnt_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/creditBNT" to="." method="_on_credit_bnt_pressed"]
+[connection signal="pressed" from="HBoxContainer/VBoxContainer2/quitBNT" to="." method="_on_quit_bnt_pressed"]
 [connection signal="close_requested" from="credit" to="." method="_on_credit_close_requested"]
