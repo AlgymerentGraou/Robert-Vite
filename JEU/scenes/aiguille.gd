@@ -1,7 +1,7 @@
 extends Sprite2D
 
-@export var start_angle_deg: float = 270.0
-@export var end_angle_deg: float = 630.0
+@export var start_angle_deg: float = 270.0-90
+@export var end_angle_deg: float = 630.0-90
 
 func update_from_ratio(ratio: float) -> void:
 	var start_angle = deg_to_rad(start_angle_deg)

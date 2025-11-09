@@ -58,47 +58,40 @@ animations = [{
 radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
-radius = 4.2573466
+radius = 7.75
 
 [sub_resource type="Gradient" id="Gradient_5uy6h"]
 offsets = PackedFloat32Array(0.6707317, 1)
 colors = PackedColorArray(0.74558026, 0.7455802, 0.74558014, 1, 0, 0, 0, 0)
 
-[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("enemy_sprite") groups=["Enemy"]]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("enemy_sprite")]
 scale = Vector2(4, 4)
-collision_layer = 2
-collision_mask = 4
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_md0e3")
+SPEED = 66.0
 enemy_sprite = NodePath("AnimatedSprite2D")
-wander_speed = 70.0
-merge_distance = 40.0
-separation_distance = 30.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
-scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ipns3")
 autoplay = "default"
 frame_progress = 0.8755775
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
-scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_8qclf")
 
 [node name="DeathZone" type="Area2D" parent="."]
-scale = Vector2(4, 4)
-collision_layer = 8
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2(0.25, 1)
-scale = Vector2(4, 4)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_md0e3")
 debug_color = Color(0.61960787, 0.45490196, 0.7490196, 0.22745098)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 texture_filter = 1
-scale = Vector2(4, 4)
 emitting = false
 amount = 1
 texture = ExtResource("3_4ra3w")
@@ -113,4 +106,8 @@ scale_amount_min = 4.0
 scale_amount_max = 4.0
 color_ramp = SubResource("Gradient_5uy6h")
 
+[node name="DeathTimer" type="Timer" parent="."]
+wait_time = 30.0
+
 [connection signal="body_entered" from="DeathZone" to="." method="_on_death_zone_body_entered"]
+[connection signal="timeout" from="DeathTimer" to="." method="_on_death_timer_timeout"]

@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd82d8j2qq4p3"
-path="res://.godot/imported/Jauge.png-d49c667389efa9fce1b34310f39cea0d.ctex"
+uid="uid://cs8kcyabcapjp"
+path="res://.godot/imported/Black car.png-52c7268f6361cd96c28c3327dc289ff7.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Jauge.png"
-dest_files=["res://.godot/imported/Jauge.png-d49c667389efa9fce1b34310f39cea0d.ctex"]
+source_file="res://assets/Black car.png"
+dest_files=["res://.godot/imported/Black car.png-52c7268f6361cd96c28c3327dc289ff7.ctex"]
 
 [params]
 
