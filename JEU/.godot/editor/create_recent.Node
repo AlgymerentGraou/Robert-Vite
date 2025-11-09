@@ -1,4 +1,7 @@
 Sprite2D
+CollisionPolygon2D
+CollisionShape2D
+StaticBody2D
 Node2D
 CPUParticles2D
 Button
@@ -9,6 +12,3 @@ VBoxContainer
 VideoStreamPlayer
 AspectRatioContainer
 Timer
-CharacterBody2D
-Parallax2D
-CanvasLayer
