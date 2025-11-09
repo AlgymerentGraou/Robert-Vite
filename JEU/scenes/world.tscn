@@ -49,7 +49,7 @@ script = ExtResource("2_k0juu")
 
 [node name="Spawner" parent="." instance=ExtResource("3_4wyf3")]
 enemy_scene = ExtResource("2_4wyf3")
-spawn_interval = 0.5
+spawn_interval = 0.1
 
 [node name="TimerLevel" type="Timer" parent="."]
 wait_time = 10.0
@@ -133,19 +133,19 @@ position = Vector2(3, 0)
 polygon = PackedVector2Array(-984, 674, -692, 828, -346, 661, -657, 503, -875, 615)
 
 [node name="Quartier5" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-11, -667)
+position = Vector2(-19, -667)
 polygon = PackedVector2Array(-291, 338, 19, 499, 335, 344, 12, 197)
 
 [node name="Quartier6" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(642, -1012)
+position = Vector2(649, -1014)
 polygon = PackedVector2Array(-297, 339, 19, 499, 351, 335, 23, 188)
 
 [node name="Quartier7" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-16, -1348)
+position = Vector2(-19, -1351)
 polygon = PackedVector2Array(-297, 339, 19, 499, 351, 335, 23, 188)
 
 [node name="Quartier8" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-684, -1008)
+position = Vector2(-686, -1014)
 polygon = PackedVector2Array(-297, 339, 19, 499, 351, 335, 23, 188)
 
 [node name="Quartier9" type="CollisionPolygon2D" parent="StaticBody2D"]
@@ -153,8 +153,68 @@ position = Vector2(-1532, -1449)
 polygon = PackedVector2Array(-297, 339, -85, 441, -19, 419, 163, 482, 80, 527, 138, 554, 392, 471, 255, 385, 250, 298, 23, 188)
 
 [node name="Quartier10" type="CollisionPolygon2D" parent="StaticBody2D"]
-position = Vector2(-2218, -1790)
-polygon = PackedVector2Array(-270, 368, 28, 517, 170, 460, 381, 558, 553, 467, -446, -82, -796, 108, -629, 192, -492, 137, -147, 291)
+position = Vector2(-3396, -2376)
+polygon = PackedVector2Array(-138, 429, 28, 509, 176, 437, 158, 416, 295, 350, 65, 220, -140, 317, -38, 371)
+
+[node name="Quartier12" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-4216, -2004)
+polygon = PackedVector2Array(144, 458, 411, 328, 410, 262, 170, 154, -140, 317)
+
+[node name="Quartier13" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-4652, -2339)
+polygon = PackedVector2Array(-41, 366, 11, 341, -83, 289, -140, 317)
+
+[node name="Quartier25" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-5076, -1965)
+polygon = PackedVector2Array(-93, 342, 6, 292, -46, 270, -140, 317)
+
+[node name="Quartier22" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-5573, -2667)
+polygon = PackedVector2Array(-41, 366, 11, 341, -83, 289, -140, 317)
+
+[node name="Quartier26" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-6063, -2905)
+polygon = PackedVector2Array(-85, 343, 64, 268, 25, 242, 108, 199, 182, 244, 122, 141, 61, 145, -25, 201, -24, 249, -140, 317)
+
+[node name="Quartier24" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-5972, -2454)
+polygon = PackedVector2Array(-352, 466, -254, 421, -220, 434, -220, 516, -174, 539, -79, 492, 71, 571, 6, 631, 129, 696, 230, 643, 319, 704, 251, 748, 395, 822, 493, 754, 575, 815, 498, 875, 599, 926, 654, 897, 577, 816, 770, 698, 553, 590, 482, 647, 427, 603, 449, 587, 301, 499, 246, 528, 181, 483, 237, 444, -37, 283, -128, 283, -402, 438)
+
+[node name="Quartier23" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-5388, -2607)
+polygon = PackedVector2Array(-7, 388, 93, 339, 59, 320, 194, 240, 290, 288, 344, 262, 204, 189, 58, 116, -39, 116, -86, 144, -88, 183, -135, 213, -138, 318)
+
+[node name="Quartier17" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-4209, -1320)
+polygon = PackedVector2Array(11, 392, 59, 366, -81, 292, -140, 317)
+
+[node name="Quartier21" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-5339, -1429)
+polygon = PackedVector2Array(11, 392, 59, 366, -81, 292, -140, 317)
+
+[node name="Quartier19" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-3267, -1793)
+polygon = PackedVector2Array(11, 392, 59, 366, -81, 292, -140, 317)
+
+[node name="Quartier20" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-2856, -1997)
+polygon = PackedVector2Array(11, 392, 59, 366, -81, 292, -140, 317)
+
+[node name="Quartier18" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-4286, -1315)
+polygon = PackedVector2Array(191, 24, 365, -59, 339, -72, 406, -106, 549, -38, 601, -63, 403, -171, 90, -26)
+
+[node name="Quartier16" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-4396, -1658)
+polygon = PackedVector2Array(67, 418, 162, 371, -40, 273, -140, 317)
+
+[node name="Quartier15" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-4631, -1775)
+polygon = PackedVector2Array(-105, 399, 11, 341, -81, 303, -344, 438, -244, 488, -194, 461, -233, 422, -150, 377)
+
+[node name="Quartier14" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-4778, -2434)
+polygon = PackedVector2Array(570, 66, 615, 44, 756, 111, 811, 87, 926, 140, 1033, 89, 572, -161, 501, -124, 666, -46, 513, 38)
 
 [node name="Quartier11" type="CollisionPolygon2D" parent="StaticBody2D"]
 position = Vector2(-2784, -936)

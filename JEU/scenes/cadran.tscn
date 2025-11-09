@@ -1,7 +1,7 @@
 [gd_scene load_steps=6 format=3 uid="uid://cwnqw087s7rsr"]
 
 [ext_resource type="Script" uid="uid://dgu6lfhqh0w4e" path="res://scenes/cadran.gd" id="1_0ptq8"]
-[ext_resource type="Texture2D" uid="uid://b22eggq1nn7lf" path="res://assets/Jauge (1).webp" id="2_0ptq8"]
+[ext_resource type="Texture2D" uid="uid://c6o87rpyc1cet" path="res://assets/Jauge (2).png" id="2_0ptq8"]
 [ext_resource type="Script" uid="uid://bc1duye1urqug" path="res://scenes/sprite_2d.gd" id="2_5clrv"]
 [ext_resource type="Texture2D" uid="uid://ds4xtbbl4ce5p" path="res://assets/fléche_cadran_2.png" id="3_j62l8"]
 [ext_resource type="Script" uid="uid://rekrcn32863e" path="res://scenes/aiguille.gd" id="4_0ptq8"]

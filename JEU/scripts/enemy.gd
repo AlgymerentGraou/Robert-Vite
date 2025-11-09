@@ -64,3 +64,7 @@ func _on_death_zone_body_entered(body: Node2D) -> void:
 		# Attendre la fin des particules (durée = lifetime des particules)
 		await get_tree().create_timer(1.1).timeout
 		queue_free()
+
+
+func _on_death_timer_timeout() -> void:
+	queue_free()
