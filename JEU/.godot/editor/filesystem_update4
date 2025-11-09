@@ -7,3 +7,4 @@ res://scripts/spawner.gd
 res://scenes/enemy.tscn
 res://scenes/world.gd
 res://scenes/cadran.tscn
+res://scenes/cadran.gd
