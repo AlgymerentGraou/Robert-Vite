@@ -1,8 +1,8 @@
+VBoxContainer
 Button
 Label
 Window
 Popup
-VBoxContainer
 VideoStreamPlayer
 AspectRatioContainer
 CPUParticles2D

@@ -5,3 +5,5 @@ res://scenes/car.tscn
 res://scenes/main menu.tscn
 res://scenes/main_menu_button.gd
 res://scenes/cinématique_end.gd
+res://scenes/death_screenBNT.gd
+res://scenes/death_screen.tscn
