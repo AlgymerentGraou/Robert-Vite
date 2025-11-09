@@ -33,6 +33,7 @@ repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 texture_filter = 1
+position = Vector2(21, -21)
 scale = Vector2(4, 4)
 texture = ExtResource("6_4mrxx")
 
@@ -46,7 +47,7 @@ script = ExtResource("2_k0juu")
 
 [node name="Spawner" parent="." instance=ExtResource("3_4wyf3")]
 enemy_scene = ExtResource("2_4wyf3")
-spawn_interval = 0.5
+spawn_interval = 0.1
 
 [node name="TimerLevel" type="Timer" parent="."]
 wait_time = 10.0

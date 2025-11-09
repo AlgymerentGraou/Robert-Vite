@@ -2,32 +2,20 @@ class_name Car extends CharacterBody2D
 
 # Paramètres de la voiture
 @export_group("Car Settings")
-@export var wheel_base: float = 70
-@export var steering_angle: float = 25
-@export var engine_power: float = 1200
-@export var braking: float = -250
-@export var max_speed_reverse: float = 250
-
-# Friction et traînée
-@export_group("Friction and Drag")
-@export var friction: float = -0.4
-@export var drag: float = -0.0005
-
-# Drift/Glisse
-@export_group("Drift Related")
-@export var slip_speed: float = 250
-@export var traction_fast: float = 0.05
-@export var traction_slow: float = 0.8
+@export var acceleration_speed: float = 800.0
+@export var max_speed: float = 800.0
+@export var friction: float = 600.0
 
 # Sprite avec 8 directions
 @export_group("Visual")
 @export var car_sprite: Sprite2D
 
 # Variables internes
-var _acceleration: Vector2 = Vector2.ZERO
-var _steer_angle: float
-var _current_heading: float = 0.0
+var _current_direction: int = 0  # Index de la direction (0-7)
 var score: int = 0
+
+# 8 directions isométriques en degrés
+const ISO_ANGLES: Array[float] = [0.0, 27.5, 90.0, 152.5, 180.0, 207.5, 270.0, 332.5]
 
 # 📦 SYSTÈME DE BONUS
 var bonus_inventory: Array[String] = []  # Liste des bonus obtenus
@@ -36,79 +24,86 @@ func _ready():
 	if car_sprite:
 		car_sprite.hframes = 8
 		car_sprite.frame = 0
-	_current_heading = rotation
+	# Initialiser à la direction droite (0°)
+	_current_direction = 0
+	update_rotation()
 
 func _physics_process(delta: float) -> void:
-	_acceleration = Vector2.ZERO
-	get_input()
-	apply_friction()
-	calculate_steering(delta)
-	velocity += _acceleration * delta
+	handle_input()
+	apply_movement(delta)
+	update_sprite()
 	move_and_slide()
 
-func get_input():
-	var turn = 0
+func handle_input():
+	var input_dir = Vector2.ZERO
+	
+	# Récupérer l'input
 	if Input.is_action_pressed("RIGHT"):
-		turn += 1
+		input_dir.x += 1
 	if Input.is_action_pressed("LEFT"):
-		turn -= 1
-	_steer_angle = turn * deg_to_rad(steering_angle)
-	
-	if Input.is_action_pressed("UP"):
-		_acceleration = transform.x * engine_power
+		input_dir.x -= 1
 	if Input.is_action_pressed("DOWN"):
-		_acceleration = transform.x * braking
+		input_dir.y += 1
+	if Input.is_action_pressed("UP"):
+		input_dir.y -= 1
+	
+	# Si on a un input, déterminer la direction iso la plus proche
+	if input_dir.length() > 0:
+		var input_angle = rad_to_deg(input_dir.angle())
+		if input_angle < 0:
+			input_angle += 360
+		
+		# Trouver la direction iso la plus proche
+		_current_direction = get_closest_iso_direction(input_angle)
+		update_rotation()
 
-func apply_friction():
-	if velocity.length() < 5:
-		velocity = Vector2.ZERO
+func get_closest_iso_direction(angle: float) -> int:
+	var closest_index = 0
+	var min_diff = 360.0
 	
-	var friction_force = velocity * friction
-	var drag_force = velocity * velocity.length() * drag
+	for i in range(ISO_ANGLES.size()):
+		var diff = abs(angle - ISO_ANGLES[i])
+		# Gérer le wrap around (ex: 359° vs 0°)
+		if diff > 180:
+			diff = 360 - diff
+		
+		if diff < min_diff:
+			min_diff = diff
+			closest_index = i
 	
-	if velocity.length() < 100:
-		friction_force *= 3
-	
-	_acceleration += drag_force + friction_force
+	return closest_index
 
-func calculate_steering(delta: float):
-	var rear_wheel = position - transform.x * wheel_base / 2.0
-	var front_wheel = position + transform.x * wheel_base / 2.0
-	
-	rear_wheel += velocity * delta
-	front_wheel += velocity.rotated(_steer_angle) * delta
-	
-	var new_heading = (front_wheel - rear_wheel).normalized()
-	
-	var traction = traction_slow
-	if velocity.length() > slip_speed:
-		traction = traction_fast
-	
-	var d = new_heading.dot(velocity.normalized())
-	
-	if d > 0:
-		velocity = velocity.lerp(new_heading * velocity.length(), traction)
-	if d < 0:
-		velocity = -new_heading * min(velocity.length(), max_speed_reverse)
-	
-	_current_heading = new_heading.angle()
-	rotation = _current_heading
-	
-	if car_sprite:
-		car_sprite.rotation = -rotation
-		update_sprite_direction(_current_heading)
+func update_rotation():
+	# Mettre à jour la rotation du CharacterBody2D
+	rotation = deg_to_rad(ISO_ANGLES[_current_direction])
 
-func update_sprite_direction(angle_rad: float):
+func apply_movement(delta: float):
+	# Accélérer dans la direction actuelle si on appuie sur une touche
+	var is_moving = (Input.is_action_pressed("UP") or 
+					 Input.is_action_pressed("DOWN") or 
+					 Input.is_action_pressed("LEFT") or 
+					 Input.is_action_pressed("RIGHT"))
+	
+	if is_moving:
+		# Calculer la direction du mouvement
+		var move_direction = Vector2.RIGHT.rotated(rotation)
+		velocity += move_direction * acceleration_speed * delta
+		
+		# Limiter la vitesse max
+		if velocity.length() > max_speed:
+			velocity = velocity.normalized() * max_speed
+	else:
+		# Appliquer la friction
+		velocity = velocity.move_toward(Vector2.ZERO, friction * delta)
+
+func update_sprite():
 	if not car_sprite:
 		return
 	
-	var angle_deg = rad_to_deg(angle_rad)
-	
-	if angle_deg < 0:
-		angle_deg += 360
-	
-	var frame_index = int((angle_deg + 22.5) / 45.0) % 8
-	car_sprite.frame = frame_index
+	# Annuler la rotation du body pour le sprite
+	car_sprite.rotation = -rotation
+	# Mettre à jour la frame selon la direction
+	car_sprite.frame = _current_direction
 
 func add_score(amount: int) -> void:
 	score += amount
@@ -124,15 +119,19 @@ func add_bonus(bonus_name: String) -> void:
 func apply_bonus_effect(bonus_name: String) -> void:
 	match bonus_name:
 		"Vitesse":
-			engine_power += 200
-			print("⚡ Puissance moteur augmentée : ", engine_power)
+			var old_speed = max_speed
+			max_speed += 50
+			print("⚡ [BONUS-VITESSE] Vitesse max : ", old_speed, " → ", max_speed, " (+50)")
 		
 		"Taille":
 			if car_sprite:
+				var old_scale = car_sprite.scale
 				var new_scale = car_sprite.scale * 1.1
 				car_sprite.scale = new_scale
-				print("📏 Taille augmentée : ", new_scale)
+				print("📏 [BONUS-TAILLE] Échelle : ", old_scale, " → ", new_scale, " (+10%)")
 		
 		"Maniabilité":
-			steering_angle += 3
-			print("🎯 Maniabilité augmentée : ", steering_angle, "°")
+			var old_accel = acceleration_speed
+			acceleration_speed += 100
+			print("🎯 [BONUS-MANIABILITÉ] Accélération : ", old_accel, " → ", acceleration_speed, " (+100)")
+			

@@ -15,6 +15,10 @@ run/main_scene="uid://bpvhc430uq0u6"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
+[display]
+
+window/size/mode=3
+
 [editor_plugins]
 
 enabled=PackedStringArray()
