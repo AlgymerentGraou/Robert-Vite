@@ -4,3 +4,7 @@ res://scripts/enemy.gd
 res://scenes/car.tscn
 res://scenes/cadran.tscn
 res://scenes/aiguille.gd
+res://scenes/cadran.gd
+res://scenes/world.gd
+res://scripts/car.gd
+res://scripts/spawner.gd
