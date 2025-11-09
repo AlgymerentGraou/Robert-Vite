@@ -18,7 +18,7 @@ script = ExtResource("1_71j4m")
 
 [node name="Cadran" parent="." instance=ExtResource("7_i7141")]
 
-[node name="ColorRect" type="ColorRect" parent="Cadran"]
+[node name="ColorRect2" type="ColorRect" parent="Cadran"]
 material = SubResource("ShaderMaterial_w7kh3")
 anchors_preset = 15
 anchor_right = 1.0
@@ -34,22 +34,22 @@ repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 texture_filter = 1
-position = Vector2(-25, -49)
+position = Vector2(-212, 393)
 scale = Vector2(4, 4)
 texture = ExtResource("6_4mrxx")
 
 [node name="Car" parent="." instance=ExtResource("1_rwgxs")]
-position = Vector2(322, 413)
+position = Vector2(1077, 1516)
 
 [node name="Camera2D" type="Camera2D" parent="Car"]
-zoom = Vector2(2, 2)
+zoom = Vector2(1.5, 1.5)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 script = ExtResource("2_k0juu")
 
 [node name="Spawner" parent="." instance=ExtResource("3_4wyf3")]
 enemy_scene = ExtResource("2_4wyf3")
-spawn_interval = 0.3
+spawn_interval = 0.01
 normal_scale = 3.0
 large_scale = 5.0
 huge_scale = 8.0

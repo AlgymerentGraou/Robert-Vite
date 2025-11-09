@@ -102,9 +102,3 @@ func apply_size_to_enemy(enemy: Node, size_data: Dictionary) -> void:
 	# Transmettre la valeur de kill à l'ennemi
 	if enemy.has_method("set_kill_value"):
 		enemy.set_kill_value(size_data.kill_value)
-	
-	print("👾 [SPAWNER] Robert %s spawné (valeur: %d kills, échelle: %.1f)" % [
-		size_data.type,
-		size_data.kill_value,
-		size_data.scale
-	])

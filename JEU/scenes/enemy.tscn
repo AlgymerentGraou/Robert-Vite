@@ -64,32 +64,41 @@ radius = 4.2573466
 offsets = PackedFloat32Array(0.6707317, 1)
 colors = PackedColorArray(0.74558026, 0.7455802, 0.74558014, 1, 0, 0, 0, 0)
 
-[node name="Enemy" type="CharacterBody2D" groups=["Enemy"]]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("enemy_sprite") groups=["Enemy"]]
 scale = Vector2(4, 4)
 collision_layer = 2
 collision_mask = 4
 script = ExtResource("1_md0e3")
+enemy_sprite = NodePath("AnimatedSprite2D")
+wander_speed = 70.0
+merge_distance = 40.0
+separation_distance = 30.0
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
+scale = Vector2(4, 4)
 sprite_frames = SubResource("SpriteFrames_ipns3")
 autoplay = "default"
 frame_progress = 0.8755775
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(0, 1)
+scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_8qclf")
 
 [node name="DeathZone" type="Area2D" parent="."]
+scale = Vector2(4, 4)
 collision_layer = 8
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
 position = Vector2(0.25, 1)
+scale = Vector2(4, 4)
 shape = SubResource("CircleShape2D_md0e3")
 debug_color = Color(0.61960787, 0.45490196, 0.7490196, 0.22745098)
 
 [node name="CPUParticles2D" type="CPUParticles2D" parent="."]
 texture_filter = 1
+scale = Vector2(4, 4)
 emitting = false
 amount = 1
 texture = ExtResource("3_4ra3w")

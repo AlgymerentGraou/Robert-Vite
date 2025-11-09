@@ -7,3 +7,8 @@ res://scripts/spawner.gd
 res://scenes/enemy.tscn
 res://scenes/world.gd
 res://scenes/cadran.tscn
+res://scenes/cadran.gd
+res://scenes/aiguille.gd
+res://scenes/sprite_2d.gd
+res://shaders/CRT.gdshader
+res://shaders/Silhouette.gdshader

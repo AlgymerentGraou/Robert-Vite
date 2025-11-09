@@ -1,11 +1,11 @@
-CPUParticles2D
+VBoxContainer
 Button
 Label
 Window
 Popup
-VBoxContainer
 VideoStreamPlayer
 AspectRatioContainer
+CPUParticles2D
 Sprite2D
 Timer
 CharacterBody2D

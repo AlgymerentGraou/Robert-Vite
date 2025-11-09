@@ -4,9 +4,21 @@ extends CanvasLayer
 @export var label: Label
 @export var jauge: Sprite2D
 @export var fleche: Sprite2D
+@export var flash_overlay: ColorRect  # Nouveau : overlay pour le flash
 
+func _ready():
+	print("[Cadran] _ready() appelé")
+	print(" - Label trouvé :", label != null)
+	print(" - Jauge trouvée :", jauge != null)
+	print(" - Flèche trouvée :", fleche != null)
+	print(" - Flash overlay trouvé :", flash_overlay != null)
+	
+	# S'assurer que le flash est invisible au départ
+	if flash_overlay:
+		flash_overlay.modulate.a = 0.0
 
 func update_display(current_kills: int, target_kills: int, current_wave: int, time_left: float, time_ratio: float) -> void:
+	print("[Cadran] update_display appelé - kills: %d/%d, ratio: %.2f" % [current_kills, target_kills, time_ratio])
 	
 	# Mettre à jour le texte
 	if label:
@@ -22,6 +34,7 @@ func update_display(current_kills: int, target_kills: int, current_wave: int, ti
 	# Mettre à jour la jauge
 	if jauge:
 		if jauge.has_method("update_progress"):
+			print("🔄 Appel de jauge.update_progress(%d, %d)" % [current_kills, target_kills])
 			jauge.update_progress(current_kills, target_kills)
 		else:
 			print("❌ La jauge n'a pas de méthode update_progress!")
@@ -31,6 +44,7 @@ func update_display(current_kills: int, target_kills: int, current_wave: int, ti
 	# Mettre à jour l'aiguille
 	if fleche:
 		if fleche.has_method("update_from_ratio"):
+			print("🔄 Appel de fleche.update_from_ratio(%.2f)" % time_ratio)
 			fleche.update_from_ratio(time_ratio)
 		else:
 			print("❌ La flèche n'a pas de méthode update_from_ratio!")
