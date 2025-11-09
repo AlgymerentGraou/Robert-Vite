@@ -49,7 +49,7 @@ script = ExtResource("2_k0juu")
 
 [node name="Spawner" parent="." instance=ExtResource("3_4wyf3")]
 enemy_scene = ExtResource("2_4wyf3")
-spawn_interval = 0.3
+spawn_interval = 0.01
 normal_scale = 3.0
 large_scale = 5.0
 huge_scale = 8.0
