@@ -9,6 +9,7 @@ class_name Car extends CharacterBody2D
 # Sprite avec 8 directions
 @export_group("Visual")
 @export var car_sprite: Sprite2D
+@export var car_sil: Sprite2D
 
 # Variables internes
 var _current_direction: int = 0  # Index de la direction (0-7)
@@ -104,6 +105,10 @@ func update_sprite():
 	car_sprite.rotation = -rotation
 	# Mettre à jour la frame selon la direction
 	car_sprite.frame = _current_direction
+	
+	car_sil.rotation = -rotation
+	# Mettre à jour la frame selon la direction
+	car_sil.frame = _current_direction
 
 func add_score(amount: int) -> void:
 	score += amount
