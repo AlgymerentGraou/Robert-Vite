@@ -1,14 +1,13 @@
-[gd_scene load_steps=11 format=3 uid="uid://bpvhc430uq0u6"]
+[gd_scene load_steps=10 format=3 uid="uid://bpvhc430uq0u6"]
 
 [ext_resource type="Script" path="res://scripts/world.gd" id="1_71j4m"]
 [ext_resource type="PackedScene" uid="uid://dap5woe8wwbxl" path="res://scenes/car.tscn" id="1_rwgxs"]
 [ext_resource type="PackedScene" uid="uid://q1ms5ivasoj0" path="res://scenes/enemy.tscn" id="2_4wyf3"]
 [ext_resource type="Script" uid="uid://bwr3vsp7kgqgj" path="res://scripts/camera_2d.gd" id="2_k0juu"]
 [ext_resource type="PackedScene" uid="uid://ovpmsigldn2t" path="res://scenes/spawner.tscn" id="3_4wyf3"]
-[ext_resource type="Texture2D" uid="uid://bp8jimkigdbt8" path="res://assets/Roads.png" id="6_4mrxx"]
+[ext_resource type="Texture2D" uid="uid://cpjf8n4pj6uho" path="res://assets/Sprite-0002.png" id="4_4mrxx"]
 [ext_resource type="PackedScene" uid="uid://cwnqw087s7rsr" path="res://scenes/cadran.tscn" id="7_i7141"]
 [ext_resource type="Shader" uid="uid://ba4lfsq1soo0m" path="res://shaders/CRT.gdshader" id="8_7r4gi"]
-[ext_resource type="Texture2D" uid="uid://dhykjsqchfb2b" path="res://assets/icon.svg" id="9_7r4gi"]
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_w7kh3"]
 shader = ExtResource("8_7r4gi")
@@ -17,6 +16,7 @@ shader = ExtResource("8_7r4gi")
 script = ExtResource("1_71j4m")
 
 [node name="Cadran" parent="." instance=ExtResource("7_i7141")]
+visible = false
 
 [node name="ColorRect2" type="ColorRect" parent="Cadran"]
 material = SubResource("ShaderMaterial_w7kh3")
@@ -30,13 +30,12 @@ metadata/_edit_use_anchors_ = true
 [node name="Parallax2D" type="Parallax2D" parent="."]
 z_index = -1
 repeat_size = Vector2(14448, 7720)
-repeat_times = 2
 
-[node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
+[node name="BackGround" type="Sprite2D" parent="Parallax2D"]
 texture_filter = 1
-position = Vector2(-212, 393)
-scale = Vector2(4, 4)
-texture = ExtResource("6_4mrxx")
+position = Vector2(5418.9355, 2753.4998)
+scale = Vector2(4.0005183, 4.0005183)
+texture = ExtResource("4_4mrxx")
 
 [node name="Car" parent="." instance=ExtResource("1_rwgxs")]
 position = Vector2(1077, 1516)
@@ -57,10 +56,3 @@ huge_scale = 8.0
 [node name="TimerLevel" type="Timer" parent="."]
 wait_time = 20.0
 one_shot = true
-
-[node name="Icon" type="Sprite2D" parent="."]
-z_index = 3
-position = Vector2(1191.25, 341.25)
-rotation = -1.584759
-scale = Vector2(3.6992185, 1.9804688)
-texture = ExtResource("9_7r4gi")

@@ -1,6 +1,6 @@
 63f7b34db8d8cdea90c76aacccf841ec
 ::res://::1762682465
-::res://assets/::1762682465
+::res://assets/::1762683520
 Car spritesheet.png::CompressedTexture2D::5973032680452550369::1762678803::1762678857::1::::<><><>0<>0<>1300b094884a6c3665723d7f244db208<>res://.godot/imported/Car spritesheet.png-4e4e63011240f28c0a32886e45bf70d7.ctex::
 fléche_cadran_2.png::CompressedTexture2D::8483958666956223515::1762624207::1762624208::1::::<><><>0<>0<>b247715f040b0c3df8dec624401122ef<>res://.godot/imported/fléche_cadran_2.png-58a7d9212f9d705ba9ce9c2714546071.ctex::
 icon.svg::CompressedTexture2D::7700753234953370227::1762612599::1762612670::1::::<><><>0<>0<>0e3c272de481110f97d284602fe6b280<>res://.godot/imported/icon.svg-56083ea2a1f1a4f1e49773bdc6d7826c.ctex::
@@ -10,10 +10,11 @@ Roads.png::CompressedTexture2D::3507939189533563811::1762678803::1762678857::1::
 robert vite playable.OGV::VideoStreamTheora::4254064285794400002::1762649271::0::1::::<><><>0<>0<><>::
 RobertRun.png::CompressedTexture2D::7094999514715827857::1762612599::1762612670::1::::<><><>0<>0<>ead7552f8c6af9233c2b2b6d913673bb<>res://.godot/imported/RobertRun.png-43afb1526c029d8adc6eeeb6fe2d86ca.ctex::
 Robert_Pattinson_at_Berlinale_2025 (1).jpg::CompressedTexture2D::7076785796428100984::1762612599::1762612671::1::::<><><>0<>0<>b1b53d52bc2ef4d32d802ee7494ec825<>res://.godot/imported/Robert_Pattinson_at_Berlinale_2025 (1).jpg-700088ae6aabc04db9ce41df29c5a1b6.ctex::
-::res://scenes/::1762682465
+Sprite-0002.png::CompressedTexture2D::5844616666203599860::1762683520::1762683521::1::::<><><>0<>0<>14daab41b91ec83db4a3deb5efb8e49c<>res://.godot/imported/Sprite-0002.png-6a9e9b7d63ba899bb9f536f35dd719ed.ctex::
+::res://scenes/::1762683206
 aiguille.gd::GDScript::-1::1762682465::0::1::::<>Sprite2D<><>0<>0<><>::
 cadran.gd::GDScript::-1::1762682465::0::1::::<>CanvasLayer<><>0<>0<><>::
-cadran.tscn::PackedScene::6344844963117427737::1762682465::0::1::::<><><>0<>0<><>::uid://dgu6lfhqh0w4e::::res://scripts/cadran.gd<>uid://cd82d8j2qq4p3::::res://assets/Jauge.png<>uid://bc1duye1urqug::::res://scripts/sprite_2d.gd<>uid://ds4xtbbl4ce5p::::res://assets/fléche_cadran_2.png<>uid://rekrcn32863e::::res://scripts/aiguille.gd
+cadran.tscn::PackedScene::6344844963117427737::1762682465::0::1::::<><><>0<>0<><>::uid://dgu6lfhqh0w4e::::res://scenes/cadran.gd<>uid://cd82d8j2qq4p3::::res://assets/Jauge.png<>uid://bc1duye1urqug::::res://scenes/sprite_2d.gd<>uid://ds4xtbbl4ce5p::::res://assets/fléche_cadran_2.png<>uid://rekrcn32863e::::res://scenes/aiguille.gd
 car.tscn::PackedScene::7192089257674856141::1762678803::0::1::::<><><>0<>0<><>::uid://ctykoatm5ysya::::res://scripts/car.gd<>uid://crdm8f1bn2vnl::::res://assets/Car spritesheet.png<>uid://bcxh8438x1ue0::::res://shaders/Silhouette.gdshader
 cinématique_end.gd::GDScript::-1::1762682465::0::1::::<>Node2D<><>0<>0<><>::
 death_screen.tscn::PackedScene::-1::1762679043::0::1::::<><><>0<>0<><>::
@@ -27,7 +28,7 @@ main_menu_button.gd::GDScript::-1::1762682465::0::1::::<>Control<><>0<>0<><>::
 spawner.tscn::PackedScene::1026928886252248421::1762612599::0::1::::<><><>0<>0<><>::uid://dum0ln0locbwu::::res://scripts/spawner.gd
 sprite_2d.gd::GDScript::-1::1762682465::0::1::::<>Sprite2D<><>0<>0<><>::
 world.gd::GDScript::-1::1762682465::0::1::::<>Node2D<><>0<>0<><>::
-world.tscn::PackedScene::3483035429230965771::1762682465::0::1::::<><><>0<>0<><>::uid://dap5woe8wwbxl::::res://scenes/car.tscn<>uid://q1ms5ivasoj0::::res://scenes/enemy.tscn<>uid://bwr3vsp7kgqgj::::res://scripts/camera_2d.gd<>uid://ovpmsigldn2t::::res://scenes/spawner.tscn<>uid://bp8jimkigdbt8::::res://assets/Roads.png<>uid://cwnqw087s7rsr::::res://scenes/cadran.tscn<>uid://ba4lfsq1soo0m::::res://shaders/CRT.gdshader<>uid://dhykjsqchfb2b::::res://assets/icon.svg
+world.tscn::PackedScene::3483035429230965771::1762683206::0::1::::<><><>0<>0<><>::res://scripts/world.gd<>uid://dap5woe8wwbxl::::res://scenes/car.tscn<>uid://q1ms5ivasoj0::::res://scenes/enemy.tscn<>uid://bwr3vsp7kgqgj::::res://scripts/camera_2d.gd<>uid://ovpmsigldn2t::::res://scenes/spawner.tscn<>uid://cpjf8n4pj6uho::::res://assets/Sprite-0002.png<>uid://cwnqw087s7rsr::::res://scenes/cadran.tscn<>uid://ba4lfsq1soo0m::::res://shaders/CRT.gdshader
 ::res://scripts/::1762682465
 camera_2d.gd::GDScript::3967408213078213797::1762670317::0::1::::<>Camera2D<><>0<>0<><>::
 car.gd::GDScript::6156606663586149208::1762678803::0::1::::Car<>CharacterBody2D<><>0<>0<><>::
