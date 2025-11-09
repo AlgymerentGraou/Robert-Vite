@@ -47,7 +47,7 @@ script = ExtResource("2_k0juu")
 
 [node name="Spawner" parent="." instance=ExtResource("3_4wyf3")]
 enemy_scene = ExtResource("2_4wyf3")
-spawn_interval = 0.1
+spawn_interval = 0.5
 
 [node name="TimerLevel" type="Timer" parent="."]
 wait_time = 10.0
