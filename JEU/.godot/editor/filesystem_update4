@@ -1,10 +1,9 @@
-res://scripts/camera_2d.gd
+res://scenes/intro_cinématique.tscn
 res://scripts/enemy.gd
-res://scenes/world.tscn
-res://scripts/car.gd
-res://scenes/car.tscn
-res://scripts/spawner.gd
-res://scenes/enemy.tscn
-res://scenes/world.gd
 res://scenes/cadran.tscn
-res://scenes/cadran.gd
+res://scenes/car.tscn
+res://scenes/main menu.tscn
+res://scenes/main_menu_button.gd
+res://scenes/cinématique_end.gd
+res://scenes/death_screenBNT.gd
+res://scenes/death_screen.tscn
