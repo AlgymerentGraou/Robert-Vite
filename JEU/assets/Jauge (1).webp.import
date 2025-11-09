@@ -2,16 +2,16 @@
 
 importer="texture"
 type="CompressedTexture2D"
-uid="uid://cd82d8j2qq4p3"
-path="res://.godot/imported/Jauge.png-d49c667389efa9fce1b34310f39cea0d.ctex"
+uid="uid://b22eggq1nn7lf"
+path="res://.godot/imported/Jauge (1).webp-04e8be4d97f7c372d381255804a128fe.ctex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://assets/Jauge.png"
-dest_files=["res://.godot/imported/Jauge.png-d49c667389efa9fce1b34310f39cea0d.ctex"]
+source_file="res://assets/Jauge (1).webp"
+dest_files=["res://.godot/imported/Jauge (1).webp-04e8be4d97f7c372d381255804a128fe.ctex"]
 
 [params]
 
