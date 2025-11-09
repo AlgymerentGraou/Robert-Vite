@@ -20,12 +20,10 @@ car_sprite = NodePath("Sprite2D")
 car_sil = NodePath("Sprite2D Silhouette")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-position = Vector2(1, 6)
 shape = SubResource("RectangleShape2D_l8qdw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["Player"]]
 texture_filter = 1
-position = Vector2(1, 2.0000005)
 scale = Vector2(4, 4)
 texture = ExtResource("2_qt2eu")
 hframes = 8
@@ -34,7 +32,6 @@ hframes = 8
 z_index = 100
 texture_filter = 1
 material = SubResource("ShaderMaterial_jtldb")
-position = Vector2(1, 2.0000005)
 scale = Vector2(4, 4)
 texture = ExtResource("2_qt2eu")
 hframes = 8
