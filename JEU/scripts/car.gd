@@ -10,6 +10,22 @@ class_name Car extends CharacterBody2D
 @export_group("Visual")
 @export var car_sprite: Sprite2D
 @export var car_sil: Sprite2D
+@export var collision_shape: CollisionShape2D  # Pour la rotation
+
+# Traînées de feu
+@export_group("Fire Trails")
+@export var fire_trail_front_left: CPUParticles2D
+@export var fire_trail_front_right: CPUParticles2D
+@export var fire_trail_rear_left: CPUParticles2D
+@export var fire_trail_rear_right: CPUParticles2D
+@export var speed_threshold_for_fire: float = 400.0  # Vitesse minimum pour le feu
+
+# Positions relatives des roues par rapport au centre de la voiture
+@export_group("Wheel Positions")
+@export var front_left_offset: Vector2 = Vector2(-15, -25)
+@export var front_right_offset: Vector2 = Vector2(15, -25)
+@export var rear_left_offset: Vector2 = Vector2(-15, 25)
+@export var rear_right_offset: Vector2 = Vector2(15, 25)
 
 # Variables internes
 var _current_direction: int = 0  # Index de la direction (0-7)
@@ -33,6 +49,7 @@ func _physics_process(delta: float) -> void:
 	handle_input()
 	apply_movement(delta)
 	update_sprite()
+	update_fire_trails()  # Gérer les traînées de feu
 	move_and_slide()
 
 func handle_input():
@@ -106,9 +123,54 @@ func update_sprite():
 	# Mettre à jour la frame selon la direction
 	car_sprite.frame = _current_direction
 	
-	car_sil.rotation = -rotation
-	# Mettre à jour la frame selon la direction
-	car_sil.frame = _current_direction
+	if car_sil:
+		car_sil.rotation = -rotation
+		# Mettre à jour la frame selon la direction
+		car_sil.frame = _current_direction
+	
+	# Faire tourner le CollisionShape2D avec la voiture
+	if collision_shape:
+		collision_shape.rotation = 0  # Suit la rotation du parent (Car body)
+	
+	# Mettre à jour les positions des particules pour qu'elles suivent les roues
+	update_wheel_positions()
+
+func update_fire_trails() -> void:
+	var current_speed = velocity.length()
+	var should_emit = current_speed >= speed_threshold_for_fire
+	
+	# Activer/désactiver toutes les traînées selon la vitesse
+	if fire_trail_front_left:
+		fire_trail_front_left.emitting = should_emit
+	
+	if fire_trail_front_right:
+		fire_trail_front_right.emitting = should_emit
+	
+	if fire_trail_rear_left:
+		fire_trail_rear_left.emitting = should_emit
+	
+	if fire_trail_rear_right:
+		fire_trail_rear_right.emitting = should_emit
+
+
+func update_wheel_positions() -> void:
+	# Mettre à jour les positions des particules pour suivre les roues
+	# Les offsets tournent avec la voiture
+	if fire_trail_front_left:
+		fire_trail_front_left.position = front_left_offset.rotated(rotation)
+		fire_trail_front_left.rotation = 0  # Suit la rotation du parent
+	
+	if fire_trail_front_right:
+		fire_trail_front_right.position = front_right_offset.rotated(rotation)
+		fire_trail_front_right.rotation = 0
+	
+	if fire_trail_rear_left:
+		fire_trail_rear_left.position = rear_left_offset.rotated(rotation)
+		fire_trail_rear_left.rotation = 0
+	
+	if fire_trail_rear_right:
+		fire_trail_rear_right.position = rear_right_offset.rotated(rotation)
+		fire_trail_rear_right.rotation = 0
 
 func add_score(amount: int) -> void:
 	score += amount
@@ -125,18 +187,10 @@ func apply_bonus_effect(bonus_name: String) -> void:
 	match bonus_name:
 		"Vitesse":
 			var old_speed = max_speed
-			max_speed += 50
-			print("⚡ [BONUS-VITESSE] Vitesse max : ", old_speed, " → ", max_speed, " (+50)")
-		
-		"Taille":
-			if car_sprite:
-				var old_scale = car_sprite.scale
-				var new_scale = car_sprite.scale * 1.1
-				car_sprite.scale = new_scale
-				print("📏 [BONUS-TAILLE] Échelle : ", old_scale, " → ", new_scale, " (+10%)")
+			max_speed += 100
+			print("⚡ [BONUS-VITESSE MAX] Vitesse max : ", old_speed, " → ", max_speed, " (+100)")
 		
 		"Maniabilité":
 			var old_accel = acceleration_speed
-			acceleration_speed += 100
-			print("🎯 [BONUS-MANIABILITÉ] Accélération : ", old_accel, " → ", acceleration_speed, " (+100)")
-			
+			acceleration_speed += 150
+			print("🎯 [BONUS-ACCÉLÉRATION] Accélération : ", old_accel, " → ", acceleration_speed, " (+150)")

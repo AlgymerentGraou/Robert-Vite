@@ -1,2 +1,9 @@
-res://scenes/car.tscn
+res://scripts/camera_2d.gd
+res://scripts/enemy.gd
+res://scenes/world.tscn
 res://scripts/car.gd
+res://scenes/car.tscn
+res://scripts/spawner.gd
+res://scenes/enemy.tscn
+res://scenes/world.gd
+res://scenes/cadran.tscn

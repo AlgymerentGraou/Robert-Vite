@@ -4,6 +4,17 @@ extends Node2D
 @export var spawn_interval: float = 2.0  # Temps entre chaque spawn
 @export var spawn_margin: float = 100.0  # Distance en dehors de l'écran visible
 
+# Paramètres de taille
+@export_group("Enemy Sizes")
+@export var normal_scale: float = 1.0
+@export var large_scale: float = 1.5
+@export var huge_scale: float = 2.0
+
+# Probabilités (doivent totaliser 100)
+@export var normal_chance: int = 70  # 70% de chance
+@export var large_chance: int = 25   # 25% de chance
+@export var huge_chance: int = 5     # 5% de chance
+
 var spawn_timer: float = 0.0
 
 func _process(delta: float) -> void:
@@ -53,4 +64,47 @@ func spawn_enemy() -> void:
 	# Créer l'ennemi
 	var enemy = enemy_scene.instantiate()
 	enemy.global_position = spawn_pos
+	
+	# Déterminer la taille aléatoire
+	var size_data = get_random_size()
+	apply_size_to_enemy(enemy, size_data)
+	
 	get_parent().add_child(enemy)
+
+func get_random_size() -> Dictionary:
+	# Tirer un nombre aléatoire entre 1 et 100
+	var roll = randi() % 100 + 1
+	
+	# Déterminer la taille selon les probabilités
+	if roll <= normal_chance:
+		return {
+			"scale": normal_scale,
+			"type": "normal",
+			"kill_value": 1
+		}
+	elif roll <= normal_chance + large_chance:
+		return {
+			"scale": large_scale,
+			"type": "large",
+			"kill_value": 2
+		}
+	else:
+		return {
+			"scale": huge_scale,
+			"type": "huge",
+			"kill_value": 3
+		}
+
+func apply_size_to_enemy(enemy: Node, size_data: Dictionary) -> void:
+	# Appliquer l'échelle
+	enemy.scale = Vector2.ONE * size_data.scale
+	
+	# Transmettre la valeur de kill à l'ennemi
+	if enemy.has_method("set_kill_value"):
+		enemy.set_kill_value(size_data.kill_value)
+	
+	print("👾 [SPAWNER] Robert %s spawné (valeur: %d kills, échelle: %.1f)" % [
+		size_data.type,
+		size_data.kill_value,
+		size_data.scale
+	])

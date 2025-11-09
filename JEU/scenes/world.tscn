@@ -34,24 +34,28 @@ repeat_times = 2
 
 [node name="Sprite2D" type="Sprite2D" parent="Parallax2D"]
 texture_filter = 1
-position = Vector2(21, -21)
+position = Vector2(-25, -49)
 scale = Vector2(4, 4)
 texture = ExtResource("6_4mrxx")
 
 [node name="Car" parent="." instance=ExtResource("1_rwgxs")]
-position = Vector2(576, 324)
+position = Vector2(322, 413)
 
 [node name="Camera2D" type="Camera2D" parent="Car"]
+zoom = Vector2(2, 2)
 position_smoothing_enabled = true
 rotation_smoothing_enabled = true
 script = ExtResource("2_k0juu")
 
 [node name="Spawner" parent="." instance=ExtResource("3_4wyf3")]
 enemy_scene = ExtResource("2_4wyf3")
-spawn_interval = 0.5
+spawn_interval = 0.3
+normal_scale = 3.0
+large_scale = 5.0
+huge_scale = 8.0
 
 [node name="TimerLevel" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 20.0
 one_shot = true
 
 [node name="Icon" type="Sprite2D" parent="."]

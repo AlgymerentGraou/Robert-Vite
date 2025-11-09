@@ -10,7 +10,7 @@ var current_wave: int = 1
 var is_game_over: bool = false
 
 # 🎁 SYSTÈME DE BONUS
-var available_bonuses: Array[String] = ["Vitesse", "Taille", "Maniabilité"]
+var available_bonuses: Array[String] = ["Vitesse", "Maniabilité"]
 
 func _ready():
 	print("[World] _ready() appelé ✅")
@@ -27,23 +27,24 @@ func _ready():
 func _process(delta: float) -> void:
 	if is_game_over or not timer_level:
 		return
-
+	
 	var ratio := 0.0
 	if timer_level.wait_time > 0.0:
 		ratio = clamp(timer_level.time_left / timer_level.wait_time, 0.0, 1.0)
-
+	
 	update_display()
-
+	
 	if timer_level.is_stopped():
 		game_over()
 
-func add_kill() -> void:
+func add_kill(amount: int = 1) -> void:
 	if is_game_over:
 		return
-
-	current_kills += 1
+	
+	current_kills += amount
+	print("📊 [WORLD] +%d kills (total: %d/%d)" % [amount, current_kills, target_kills])
 	update_display()
-
+	
 	if current_kills >= target_kills:
 		complete_wave()
 
