@@ -1,15 +1,23 @@
-[gd_scene load_steps=4 format=3 uid="uid://dap5woe8wwbxl"]
+[gd_scene load_steps=6 format=3 uid="uid://dap5woe8wwbxl"]
 
 [ext_resource type="Script" uid="uid://ctykoatm5ysya" path="res://scripts/car.gd" id="1_tphm3"]
 [ext_resource type="Texture2D" uid="uid://crdm8f1bn2vnl" path="res://assets/Car spritesheet.png" id="2_qt2eu"]
+[ext_resource type="Shader" uid="uid://bcxh8438x1ue0" path="res://shaders/Silhouette.gdshader" id="3_50v30"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_l8qdw"]
-size = Vector2(136, 96)
+size = Vector2(96, 96)
 
-[node name="Car" type="CharacterBody2D" node_paths=PackedStringArray("car_sprite") groups=["Player"]]
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_jtldb"]
+shader = ExtResource("3_50v30")
+shader_parameter/silhouette_color = Color(0, 0, 0, 0.5)
+shader_parameter/color_tolerance = 0.01
+
+[node name="Car" type="CharacterBody2D" node_paths=PackedStringArray("car_sprite", "car_sil") groups=["Player"]]
+z_index = 1
 collision_mask = 12
 script = ExtResource("1_tphm3")
 car_sprite = NodePath("Sprite2D")
+car_sil = NodePath("Sprite2D Silhouette")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(1, 6)
@@ -17,6 +25,15 @@ shape = SubResource("RectangleShape2D_l8qdw")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["Player"]]
 texture_filter = 1
+position = Vector2(1, 2.0000005)
+scale = Vector2(4, 4)
+texture = ExtResource("2_qt2eu")
+hframes = 8
+
+[node name="Sprite2D Silhouette" type="Sprite2D" parent="." groups=["Player"]]
+z_index = 100
+texture_filter = 1
+material = SubResource("ShaderMaterial_jtldb")
 position = Vector2(1, 2.0000005)
 scale = Vector2(4, 4)
 texture = ExtResource("2_qt2eu")
