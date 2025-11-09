@@ -2,7 +2,7 @@
 
 [ext_resource type="Script" uid="uid://ctykoatm5ysya" path="res://scripts/car.gd" id="1_tphm3"]
 [ext_resource type="Texture2D" uid="uid://crdm8f1bn2vnl" path="res://assets/Car spritesheet.png" id="2_qt2eu"]
-[ext_resource type="Shader" uid="uid://bcxh8438x1ue0" path="res://shaders/Silhouette.gdshader" id="3_50v30"]
+[ext_resource type="Shader" path="res://shaders/Silhouette.gdshader" id="3_50v30"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_50v30"]
 radius = 54.0
@@ -14,7 +14,6 @@ shader_parameter/color_tolerance = 0.01
 
 [node name="Car" type="CharacterBody2D" node_paths=PackedStringArray("car_sprite", "car_sil") groups=["Player"]]
 z_index = 1
-collision_mask = 12
 script = ExtResource("1_tphm3")
 car_sprite = NodePath("Sprite2D")
 car_sil = NodePath("Sprite2D Silhouette")
