@@ -1,3 +1,5 @@
+Sprite2D
+Node2D
 CPUParticles2D
 Button
 Label
@@ -6,9 +8,7 @@ Popup
 VBoxContainer
 VideoStreamPlayer
 AspectRatioContainer
-Sprite2D
 Timer
 CharacterBody2D
 Parallax2D
 CanvasLayer
-Node2D

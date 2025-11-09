@@ -4,8 +4,8 @@
 [ext_resource type="Texture2D" uid="uid://crdm8f1bn2vnl" path="res://assets/Car spritesheet.png" id="2_qt2eu"]
 [ext_resource type="Shader" uid="uid://bcxh8438x1ue0" path="res://shaders/Silhouette.gdshader" id="3_50v30"]
 
-[sub_resource type="RectangleShape2D" id="RectangleShape2D_l8qdw"]
-size = Vector2(96, 96)
+[sub_resource type="CircleShape2D" id="CircleShape2D_50v30"]
+radius = 54.0
 
 [sub_resource type="ShaderMaterial" id="ShaderMaterial_jtldb"]
 shader = ExtResource("3_50v30")
@@ -20,7 +20,7 @@ car_sprite = NodePath("Sprite2D")
 car_sil = NodePath("Sprite2D Silhouette")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
-shape = SubResource("RectangleShape2D_l8qdw")
+shape = SubResource("CircleShape2D_50v30")
 
 [node name="Sprite2D" type="Sprite2D" parent="." groups=["Player"]]
 texture_filter = 1
