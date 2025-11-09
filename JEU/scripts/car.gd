@@ -135,6 +135,12 @@ func apply_bonus_effect(bonus_name: String) -> void:
 				car_sprite.scale = new_scale
 				print("📏 [BONUS-TAILLE] Échelle : ", old_scale, " → ", new_scale, " (+10%)")
 		
+			if car_sil:
+				var old_scale_sil = car_sil.scale
+				var new_scale_sil = car_sil.scale * 1.1
+				car_sil.scale = new_scale_sil
+				print("📏 [BONUS-TAILLE] Échelle : ", old_scale_sil, " → ", new_scale_sil, " (+10%)")
+		
 		"Maniabilité":
 			var old_accel = acceleration_speed
 			acceleration_speed += 100
