@@ -58,17 +58,18 @@ animations = [{
 radius = 7.0
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_md0e3"]
-radius = 4.2573466
+radius = 7.75
 
 [sub_resource type="Gradient" id="Gradient_5uy6h"]
 offsets = PackedFloat32Array(0.6707317, 1)
 colors = PackedColorArray(0.74558026, 0.7455802, 0.74558014, 1, 0, 0, 0, 0)
 
-[node name="Enemy" type="CharacterBody2D"]
+[node name="Enemy" type="CharacterBody2D" node_paths=PackedStringArray("enemy_sprite")]
 scale = Vector2(4, 4)
-collision_layer = 2
-collision_mask = 4
+collision_layer = 4
+collision_mask = 2
 script = ExtResource("1_md0e3")
+enemy_sprite = NodePath("AnimatedSprite2D")
 
 [node name="AnimatedSprite2D" type="AnimatedSprite2D" parent="."]
 texture_filter = 1
@@ -81,10 +82,10 @@ position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_8qclf")
 
 [node name="DeathZone" type="Area2D" parent="."]
-collision_layer = 8
+collision_layer = 4
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="DeathZone"]
-position = Vector2(0.25, 1)
+position = Vector2(0, 1)
 shape = SubResource("CircleShape2D_md0e3")
 debug_color = Color(0.61960787, 0.45490196, 0.7490196, 0.22745098)
 

@@ -17,6 +17,17 @@ shader = ExtResource("8_7r4gi")
 [node name="World" type="Node2D"]
 script = ExtResource("1_71j4m")
 
+[node name="Road" type="Sprite2D" parent="."]
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("6_4mrxx")
+
+[node name="Buildings" type="Sprite2D" parent="."]
+z_index = 3
+texture_filter = 1
+scale = Vector2(4, 4)
+texture = ExtResource("5_w7kh3")
+
 [node name="Cadran" parent="." instance=ExtResource("7_i7141")]
 
 [node name="ColorRect" type="ColorRect" parent="Cadran"]
@@ -28,30 +39,8 @@ grow_horizontal = 2
 grow_vertical = 2
 metadata/_edit_use_anchors_ = true
 
-[node name="Parallax2D" type="Parallax2D" parent="."]
-z_index = -1
-repeat_size = Vector2(14448, 7720)
-repeat_times = 2
-
-[node name="Road" type="Sprite2D" parent="Parallax2D"]
-texture_filter = 1
-position = Vector2(21, -21)
-scale = Vector2(4, 4)
-texture = ExtResource("6_4mrxx")
-
-[node name="Buildings" type="Sprite2D" parent="Parallax2D"]
-z_index = 3
-texture_filter = 1
-scale = Vector2(4, 4)
-texture = ExtResource("5_w7kh3")
-
-[node name="StaticBody2D" type="StaticBody2D" parent="Parallax2D/Buildings"]
-
-[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Parallax2D/Buildings/StaticBody2D"]
-polygon = PackedVector2Array(4.75, 124.25, 97.5, 78.25, 0.25, 33.5, -87, 78.25)
-
 [node name="Car" parent="." instance=ExtResource("1_rwgxs")]
-position = Vector2(812, -72)
+position = Vector2(762, -26)
 
 [node name="Camera2D" type="Camera2D" parent="Car"]
 position_smoothing_enabled = true
@@ -108,3 +97,65 @@ z_index = 3
 texture_filter = 1
 position = Vector2(54, 27)
 texture = ExtResource("10_w7kh3")
+
+[node name="StaticBody2D" type="StaticBody2D" parent="."]
+collision_layer = 2
+collision_mask = 3
+
+[node name="Parking" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(548, -242.99998)
+scale = Vector2(3.9342818, 3.5530305)
+polygon = PackedVector2Array(14.742218, 98.788895, 39.143112, 85.279305, -22.875832, 51.505318, -45.243317, 64.17056)
+
+[node name="Parking2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(757, -359.00003)
+scale = Vector2(3.9342818, 3.5530305)
+polygon = PackedVector2Array(-16.013092, 79.08742, 8.641983, 65.29637, -20.334076, 52.06823, -44.48079, 63.044765)
+
+[node name="Parking3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(1031, -222.00002)
+scale = Vector2(3.9342818, 3.5530305)
+polygon = PackedVector2Array(-30.50113, 70.92537, -6.3544006, 57.697224, -20.842438, 52.631126, -44.48079, 63.044765)
+
+[node name="Quartier" type="CollisionPolygon2D" parent="StaticBody2D"]
+polygon = PackedVector2Array(-293, 340, 19, 499, 342, 337, -6, 201)
+
+[node name="Quartier2" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(675, 335)
+polygon = PackedVector2Array(-307, 336, 19, 499, 329, 343, -4, 180, -272, 313)
+
+[node name="Quartier3" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(675, 335)
+polygon = PackedVector2Array(-967, 679, -675, 832, -357, 677, -674, 559, -924, 661)
+
+[node name="Quartier4" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(3, 0)
+polygon = PackedVector2Array(-984, 674, -692, 828, -346, 661, -657, 503, -875, 615)
+
+[node name="Quartier5" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-11, -667)
+polygon = PackedVector2Array(-291, 338, 19, 499, 335, 344, 12, 197)
+
+[node name="Quartier6" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(642, -1012)
+polygon = PackedVector2Array(-297, 339, 19, 499, 351, 335, 23, 188)
+
+[node name="Quartier7" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-16, -1348)
+polygon = PackedVector2Array(-297, 339, 19, 499, 351, 335, 23, 188)
+
+[node name="Quartier8" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-684, -1008)
+polygon = PackedVector2Array(-297, 339, 19, 499, 351, 335, 23, 188)
+
+[node name="Quartier9" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-1532, -1449)
+polygon = PackedVector2Array(-297, 339, -85, 441, -19, 419, 163, 482, 80, 527, 138, 554, 392, 471, 255, 385, 250, 298, 23, 188)
+
+[node name="Quartier10" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-2218, -1790)
+polygon = PackedVector2Array(-270, 368, 28, 517, 170, 460, 381, 558, 553, 467, -446, -82, -796, 108, -629, 192, -492, 137, -147, 291)
+
+[node name="Quartier11" type="CollisionPolygon2D" parent="StaticBody2D"]
+position = Vector2(-2784, -936)
+polygon = PackedVector2Array(133, 681, 885, 341, 878, 266, 922, 233, 559, 18, 361, 127, 357, 228, 43, 393, -132, 356, -316, 209, -415, 124, -264, 51, -110, 25, 3, -26, 19, -90, 121, -147, 62, -187, 128, -225, -54, -314, -740, 16, -1009, 134, -999, 219, -372, 506, -122, 568)

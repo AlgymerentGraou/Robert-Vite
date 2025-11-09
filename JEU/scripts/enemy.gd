@@ -2,6 +2,7 @@ extends CharacterBody2D
 
 @export_group("Settings")
 @export var SPEED: float = 100.0
+@export var enemy_sprite = AnimatedSprite2D
 
 var _current_target
 var _is_dying: bool = false  # Empêche les multiples collisions
@@ -19,7 +20,15 @@ func _physics_process(_delta: float) -> void:
 	_current_target = targets[0]
 	
 	var _direction_to_player = global_position.direction_to(_current_target.global_position)
-	velocity = _direction_to_player * SPEED
+	velocity =  - _direction_to_player * SPEED
+	
+	if enemy_sprite:
+		if _direction_to_player.x < 0:
+			enemy_sprite.flip_h = false  # Regarde vers la droite
+		elif _direction_to_player.x > 0:
+			enemy_sprite.flip_h = true   # Regarde vers la gauche
+	
+	
 	move_and_slide()
 
 func _on_death_zone_body_entered(body: Node2D) -> void:
