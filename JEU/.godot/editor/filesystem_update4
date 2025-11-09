@@ -1,1 +1,7 @@
 res://scenes/intro_cinématique.tscn
+res://scripts/enemy.gd
+res://scenes/cadran.tscn
+res://scenes/car.tscn
+res://scenes/main menu.tscn
+res://scenes/main_menu_button.gd
+res://scenes/cinématique_end.gd

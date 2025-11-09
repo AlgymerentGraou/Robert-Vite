@@ -1,8 +1,10 @@
-[gd_scene load_steps=2 format=3 uid="uid://bbe5il7psunwq"]
+[gd_scene load_steps=3 format=3 uid="uid://duj1fbmv7bb8b"]
 
+[ext_resource type="Script" uid="uid://cla0dufnyi8ax" path="res://scenes/cinématique_end.gd" id="1_fn4gp"]
 [ext_resource type="VideoStream" uid="uid://b1ux210utwt2a" path="res://assets/robert vite playable.OGV" id="1_jxu6g"]
 
 [node name="intro cinématique" type="Node2D"]
+script = ExtResource("1_fn4gp")
 
 [node name="AspectRatioContainer" type="AspectRatioContainer" parent="."]
 offset_right = 1152.0
@@ -14,3 +16,5 @@ layout_mode = 2
 stream = ExtResource("1_jxu6g")
 autoplay = true
 expand = true
+
+[connection signal="finished" from="AspectRatioContainer/VideoStreamPlayer" to="." method="_on_video_stream_player_finished"]

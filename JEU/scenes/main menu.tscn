@@ -1,0 +1,102 @@
+[gd_scene load_steps=4 format=3 uid="uid://b6puack65w6ap"]
+
+[ext_resource type="Script" uid="uid://c6xb7d3lml3ig" path="res://scenes/main_menu_button.gd" id="1_5hgee"]
+
+[sub_resource type="LabelSettings" id="LabelSettings_uqkwj"]
+font_size = 64
+
+[sub_resource type="LabelSettings" id="LabelSettings_5hgee"]
+font_size = 32
+
+[node name="main menu" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_5hgee")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -240.0
+offset_top = 52.0
+offset_right = 241.0
+offset_bottom = 140.0
+grow_horizontal = 2
+text = "ROBERT VITE !!!!"
+label_settings = SubResource("LabelSettings_uqkwj")
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -84.0
+offset_top = -96.0
+offset_right = 85.0
+offset_bottom = 158.0
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_constants/separation = 14
+
+[node name="startBNT" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "START"
+
+[node name="cutsceneBNT" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "CUTSCENE"
+
+[node name="creditBNT" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "CREDIT"
+
+[node name="quitBNT" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 32
+text = "QUIT"
+
+[node name="credit" type="Window" parent="."]
+oversampling_override = 1.0
+initial_position = 1
+size = Vector2i(500, 500)
+visible = false
+
+[node name="Label" type="Label" parent="credit"]
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -85.5
+offset_top = -89.5
+offset_right = 85.5
+offset_bottom = 89.5
+grow_horizontal = 2
+grow_vertical = 2
+size_flags_horizontal = 4
+text = "BAILLOT Natan
+BOULONGNE Aksel
+CHOQUET Clémentine
+DURANTHON Arthur
+TETREL Andeïl
+KLEIN Yanis
+DELATTRE Alissa
+DESCELIERS Maxence
+DELBOVE Jean-batiste"
+label_settings = SubResource("LabelSettings_5hgee")
+
+[connection signal="pressed" from="VBoxContainer/startBNT" to="." method="_on_start_bnt_pressed"]
+[connection signal="pressed" from="VBoxContainer/cutsceneBNT" to="." method="_on_cutscene_bnt_pressed"]
+[connection signal="pressed" from="VBoxContainer/creditBNT" to="." method="_on_credit_bnt_pressed"]
+[connection signal="pressed" from="VBoxContainer/quitBNT" to="." method="_on_quit_bnt_pressed"]
+[connection signal="close_requested" from="credit" to="." method="_on_credit_close_requested"]
