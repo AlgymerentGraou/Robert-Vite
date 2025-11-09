@@ -66,8 +66,7 @@ func spawn_enemy() -> void:
 	enemy.global_position = spawn_pos
 	
 	# Déterminer la taille aléatoire
-	var size_data = get_random_size()
-	apply_size_to_enemy(enemy, size_data)
+
 	
 	get_parent().add_child(enemy)
 
