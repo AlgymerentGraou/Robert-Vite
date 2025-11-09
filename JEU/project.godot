@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="rubikaJam"
-run/main_scene="uid://bpvhc430uq0u6"
+run/main_scene="uid://b6puack65w6ap"
 config/features=PackedStringArray("4.5", "Forward Plus")
 config/icon="res://assets/icon.svg"
 
