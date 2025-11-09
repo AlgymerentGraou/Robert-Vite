@@ -19,9 +19,8 @@ script = ExtResource("1_5hgee")
 
 [node name="TextureRect" type="TextureRect" parent="."]
 layout_mode = 0
-offset_right = 1910.0
-offset_bottom = 1029.0
-scale = Vector2(0.60312474, 0.6296576)
+offset_right = 40.0
+offset_bottom = 40.0
 texture = ExtResource("2_xsilq")
 
 [node name="HBoxContainer" type="HBoxContainer" parent="."]
@@ -37,7 +36,7 @@ offset_right = 145.5
 offset_bottom = 60.0
 grow_horizontal = 2
 grow_vertical = 2
-theme_override_constants/separation = 749
+theme_override_constants/separation = 864
 
 [node name="VBoxContainer" type="VBoxContainer" parent="HBoxContainer"]
 layout_mode = 2
