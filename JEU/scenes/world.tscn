@@ -41,7 +41,7 @@ enemy_scene = ExtResource("2_4wyf3")
 spawn_interval = 0.1
 
 [node name="TimerLevel" type="Timer" parent="."]
-wait_time = 10.0
+wait_time = 20.0
 one_shot = true
 
 [node name="Car1" type="Sprite2D" parent="."]

@@ -1,4 +1,1 @@
-res://scenes/main menu.tscn
-res://scripts/car.gd
-res://scenes/spawner.tscn
-res://scripts/spawner.gd
+res://scenes/world.tscn
